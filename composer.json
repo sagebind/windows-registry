@@ -1,0 +1,24 @@
+{
+    "name": "coderstephen/windows-registry",
+    "description": "A small library for accessing and manipulating the Windows registry",
+    "keywords": ["registry", "windows", "win32"],
+    "type": "library",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Stephen Coakley",
+            "email": "me@stephencoakley.com",
+            "homepage": "http://stephencoakley.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3",
+        "ext-com_dotnet": "*",
+        "eloquent/enumeration": "~5.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Coderstephen\\Windows\\Registry\\": "src/"
+        }
+    }
+}

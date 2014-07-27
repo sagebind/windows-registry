@@ -1,0 +1,6 @@
+# ignore dependencies
+vendor/*
+
+# ignore ide project files
+*.sublime-project
+*.sublime-workspace
