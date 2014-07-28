@@ -29,4 +29,5 @@ final class RegistryValueType extends AbstractEnumeration
     const BINARY = 3;
     const DWORD = 4;
     const MULTI_STRING = 7;
+    const QWORD = 11;
 }
