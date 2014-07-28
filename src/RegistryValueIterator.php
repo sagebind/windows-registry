@@ -93,8 +93,8 @@ class RegistryValueIterator implements \Iterator
 
         // make sure the enum isn't empty
         if ($errorCode === 0
-            && (variant_get_type($this->valueNames) & VT_ARRAY) === VT_ARRAY
-            && (variant_get_type($this->valueTypes) & VT_ARRAY) === VT_ARRAY)
+            && (variant_get_type($this->valueNames) & VT_ARRAY)
+            && (variant_get_type($this->valueTypes) & VT_ARRAY))
         {
             // store the number of values
             $this->count = count($this->valueNames);
@@ -120,12 +120,21 @@ class RegistryValueIterator implements \Iterator
     }
 
     /**
+     * Gets the value type of the registry value at the current iteration position.
+     * @return RegistryValueType
+     */
+    public function currentType()
+    {
+        return RegistryValueType::memberByValue((int)$this->valueTypes[$this->pointer]);
+    }
+
+    /**
      * Gets the name of the registry value at the current iteration position.
      * @return string
      */
     public function key()
     {
-        return $this->valueNames[$this->pointer];
+        return (string)$this->valueNames[$this->pointer];
     }
 
     /**
@@ -134,14 +143,5 @@ class RegistryValueIterator implements \Iterator
     public function next()
     {
         $this->pointer++;
-    }
-
-    /**
-     * Gets the value type of the registry value at the current iteration position.
-     * @return RegistryValueType
-     */
-    protected function currentType()
-    {
-        return RegistryValueType::memberByValue((int)$this->valueTypes[$this->pointer]);
     }
 }
