@@ -2,7 +2,7 @@
 A small library for accessing and manipulating the Windows registry.
 
 ## Requirements
-- Microsoft Windows with WMI (Windows Management Interface)
+- Microsoft Windows (Vista or newer) or Windows Server (Windows Server 2003 or newer)
 - PHP [com_dotnet](http://php.net/manual/en/book.com.php) extension
 
 ## Installation
