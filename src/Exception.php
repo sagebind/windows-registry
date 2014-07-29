@@ -17,5 +17,5 @@
 
 namespace Coderstephen\Windows\Registry;
 
-interface RegistryException
+interface Exception
 {}
