@@ -133,10 +133,7 @@ class RegistryKey
     }
 
     /**
-     * Creates a new registry key.
-     * 
-     * @param RegistryHive $hive
-     * The registry hive to create the key in.
+     * Creates a new registry subkey.
      * 
      * @param string $name
      * The name or path of the key.
@@ -156,21 +153,28 @@ class RegistryKey
     }
 
     /**
+     * Deletes a registry subkey.
+     * 
+     * @param string $name
+     * The name or path of the subkey to delete.
+     */
+    public function deleteSubKey($name)
+    {
+        $subKeyName = empty($this->name) ? $name : $this->name . '\\' . $name;
+
+        if ($this->handle->DeleteKey($this->hive->value(), $subKeyName) !== 0)
+        {
+            throw new OperationFailedException("Failed to delete key '{$subKeyName}'.");
+        }
+    }
+
+    /**
      * Gets an iterator for iterating over subkeys of this key.
      * @return RegistryKeyIterator
      */
     public function getSubKeyIterator()
     {
         return new RegistryKeyIterator($this);
-    }
-
-    /**
-     * Gets an iterator for iterating over key values.
-     * @return RegistryValueIterator
-     */
-    public function getValueIterator()
-    {
-        return new RegistryValueIterator($this);
     }
 
     /**
@@ -191,41 +195,6 @@ class RegistryKey
             $name,
             null
         ) !== 1;
-    }
-
-    /**
-     * Gets the data type of a given value.
-     *
-     * Note that this is an expensive operation if the value is not in the
-     * cache, especially for keys with lots of values.
-     * 
-     * @param string $name
-     * The name of the value.
-     * 
-     * @return RegistryValueType
-     */
-    public function getValueType($name)
-    {
-        // is the value cached?
-        if ($this->cache->hasValue($name))
-        {
-            // get the type from the cache
-            return $this->cache->getValueType($name);
-        }
-
-        // iterate over all values in the key
-        $iterator = $this->getValueIterator();
-        foreach ($iterator as $key => $value)
-        {
-            // is this the value we are looking for?
-            if ($key === $name)
-            {
-                // value is now cached through the iterator
-                return $iterator->currentType();
-            }
-        }
-
-        throw new ValueNotFoundException("The value '{$name}' does not exist.");
     }
 
     /**
@@ -407,5 +376,49 @@ class RegistryKey
 
             throw new OperationFailedException("Failed to delete value '{$name}' from key '$this->name}'.");
         }
+    }
+
+    /**
+     * Gets the data type of a given value.
+     *
+     * Note that this is an expensive operation if the value is not in the
+     * cache, especially for keys with lots of values.
+     * 
+     * @param string $name
+     * The name of the value.
+     * 
+     * @return RegistryValueType
+     */
+    public function getValueType($name)
+    {
+        // is the value cached?
+        if ($this->cache->hasValue($name))
+        {
+            // get the type from the cache
+            return $this->cache->getValueType($name);
+        }
+
+        // iterate over all values in the key
+        $iterator = $this->getValueIterator();
+        foreach ($iterator as $key => $value)
+        {
+            // is this the value we are looking for?
+            if ($key === $name)
+            {
+                // value is now cached through the iterator
+                return $iterator->currentType();
+            }
+        }
+
+        throw new ValueNotFoundException("The value '{$name}' does not exist.");
+    }
+
+    /**
+     * Gets an iterator for iterating over key values.
+     * @return RegistryValueIterator
+     */
+    public function getValueIterator()
+    {
+        return new RegistryValueIterator($this);
     }
 }
