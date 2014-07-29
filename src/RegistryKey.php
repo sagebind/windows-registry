@@ -103,6 +103,17 @@ class RegistryKey
     }
 
     /**
+     * Deletes the registry key.
+     */
+    public function delete()
+    {
+        if ($this->handle->DeleteKey($this->hive->value(), $this->name) !== 0)
+        {
+            throw new OperationFailedException("Failed to delete key '{$this->name}'.");
+        }
+    }
+
+    /**
      * Gets a registry subkey with the specified name.
      *
      * @param string $name
@@ -160,12 +171,7 @@ class RegistryKey
      */
     public function deleteSubKey($name)
     {
-        $subKeyName = empty($this->name) ? $name : $this->name . '\\' . $name;
-
-        if ($this->handle->DeleteKey($this->hive->value(), $subKeyName) !== 0)
-        {
-            throw new OperationFailedException("Failed to delete key '{$subKeyName}'.");
-        }
+        $this->getSubKey($name)->delete();
     }
 
     /**
