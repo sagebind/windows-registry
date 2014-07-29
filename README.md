@@ -16,9 +16,10 @@ Use [Composer](http://getcomposer.org):
 Opening a registry key:
 
 ```php
-use Coderstephen\Windows\Registry;
+use Coderstephen\Windows\Registry\Registry;
 
-$key = Registry\RegistryKey::open(Registry\RegistryHive::CURRENT_USER(), 'Control Panel\\Desktop');
+$registry = Registry::connect();
+$key = $registry->getCurrentUser()->getSubKey('Control Panel\\Desktop');
 ```
 
 Getting some values:
