@@ -183,15 +183,21 @@ class RegistryKey
      */
     public function valueExists($name)
     {
-        // look for the suspicious "1" error code (which I believe to mean does not exist)
-        return $this->handle->GetStringValue($this->hive->value(), $this->name, $name, null) !== 1;
+        // look for the suspicious "1" error code (which I believe to mean does
+        // not exist)
+        return $this->handle->GetStringValue(
+            $this->hive->value(),
+            $this->name,
+            $name,
+            null
+        ) !== 1;
     }
 
     /**
      * Gets the data type of a given value.
      *
-     * Note that this is an expensive operation if the value is not in the cache, especially for
-     * keys with lots of values.
+     * Note that this is an expensive operation if the value is not in the
+     * cache, especially for keys with lots of values.
      * 
      * @param string $name
      * The name of the value.
@@ -394,10 +400,8 @@ class RegistryKey
         // attempt to delete the value
         $errorCode = $this->handle->DeleteValue($this->hive->value(), $this->name, $name);
 
-        if ($errorCode !== 0)
-        {
-            if (!$this->valueExists($name))
-            {
+        if ($errorCode !== 0) {
+            if (!$this->valueExists($name)) {
                 throw new ValueNotFoundException("The value '{$name}' does not exist.");
             }
 

@@ -111,7 +111,9 @@ class RegistryValueIterator implements \Iterator
     }
 
     /**
-     * Gets the data value of the registry value at the current iteration position.
+     * Gets the data value of the registry value at the current iteration
+     * position.
+     * 
      * @return mixed
      */
     public function current()
@@ -120,7 +122,9 @@ class RegistryValueIterator implements \Iterator
     }
 
     /**
-     * Gets the value type of the registry value at the current iteration position.
+     * Gets the value type of the registry value at the current iteration
+     * position.
+     * 
      * @return RegistryValueType
      */
     public function currentType()
