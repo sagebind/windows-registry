@@ -1,8 +1,10 @@
 # Windows Registry Wrapper
-A small library for accessing and manipulating the Windows registry.
+A small library for accessing and manipulating the Windows registry. For that
+one time that you need to access the Windows registry in a PHP application.
 
 ## Requirements
-- Microsoft Windows (Vista or newer) or Windows Server (Windows Server 2003 or newer)
+- Microsoft Windows (Vista or newer) or Windows Server (Windows Server 2003 or
+  newer)
 - PHP [com_dotnet](http://php.net/manual/en/book.com.php) extension
 
 ## Installation
@@ -13,28 +15,48 @@ Use [Composer](http://getcomposer.org):
 ```
 
 ## Examples
-Opening a registry key:
+Below is an example of creating a new registry key with some values and then
+deleting them.
 
 ```php
-use Coderstephen\Windows\Registry\Registry;
+use Coderstephen\Windows\Registry;
 
-$registry = Registry::connect();
-$key = $registry->getCurrentUser()->getSubKey('Control Panel\\Desktop');
+$hklm = Registry\Registry::connect()->getLocalMachine();
+$keyPath = 'Software\\MyKey\\MySubKey';
+
+// create a new key
+try
+{
+    $mySubKey = $hklm->createSubKey($keyPath);
+}
+catch (Registry\Exception $e)
+{
+    print "Key '{$keyPath}' not created" . PHP_EOL;
+}
+
+// create a new value
+$mySubKey->setValue('Example DWORD Value', 250, Registry\RegistryValueType::DWORD());
+
+// delete the new value
+$mySubKey->deleteValue('Example DWORD Value');
+
+// delete the new key
+try
+{
+    $mySubKey->delete();
+}
+catch (Registry\Exception $e)
+{
+    print "Key '{$keyPath}' not deleted" . PHP_EOL;
+}
 ```
 
-Getting some values:
-
-```php
-print $key->getValue('ImageColor', Registry\RegistryValueType::DWORD());
-print $key->getValue('Wallpaper', Registry\RegistryValueType::STRING());
-```
-
-Iterating over subkeys and key values:
+You can also iterate over subkeys and values using built-in iterators:
 
 ```php
 foreach ($key->getSubKeyIterator() as $name => $subKey)
 {
-	print $subKey->getQualifiedName();
+    print $subKey->getQualifiedName();
 }
 
 foreach ($key->getValueIterator() as $name => $value)
@@ -43,5 +65,10 @@ foreach ($key->getValueIterator() as $name => $value)
 }
 ```
 
-## Stability
-Nope
+## Disclaimer
+Messing with the Windows registry can be dangerous; Microsoft has plenty of
+warnings about how it can destroy your installation. Not only should you be
+careful when accessing the registry, this library is not guaranteed to be 100%
+safe to use and free of bugs. Use discretion, and test your code in a virtual
+machine if possible. I am not liable for any damages caused by this library.
+See the [license](LICENSE) for details.
