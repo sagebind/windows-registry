@@ -18,4 +18,5 @@
 namespace Coderstephen\Windows\Registry;
 
 class ValueNotFoundException extends \RuntimeException implements Exception
-{}
+{
+}

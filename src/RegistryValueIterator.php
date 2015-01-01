@@ -94,8 +94,7 @@ class RegistryValueIterator implements \Iterator
         // make sure the enum isn't empty
         if ($errorCode === 0
             && (variant_get_type($this->valueNames) & VT_ARRAY)
-            && (variant_get_type($this->valueTypes) & VT_ARRAY))
-        {
+            && (variant_get_type($this->valueTypes) & VT_ARRAY)) {
             // store the number of values
             $this->count = count($this->valueNames);
         }
@@ -113,7 +112,7 @@ class RegistryValueIterator implements \Iterator
     /**
      * Gets the data value of the registry value at the current iteration
      * position.
-     * 
+     *
      * @return mixed
      */
     public function current()
@@ -124,7 +123,7 @@ class RegistryValueIterator implements \Iterator
     /**
      * Gets the value type of the registry value at the current iteration
      * position.
-     * 
+     *
      * @return RegistryValueType
      */
     public function currentType()

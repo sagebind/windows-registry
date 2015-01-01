@@ -30,22 +30,22 @@ class Registry
 
     /**
      * Connects to a registry and returns a registry instance.
-     * 
+     *
      * @param string $host
      * The host name or IP address of the computer whose registry to connect
      * to. Defaults to the local computer.
-     * 
+     *
      * @param string $username
      * The user name to use to access the registry.
-     * 
-     * @param string $password [description]
+     *
+     * @param string $password
      * The password to use to access the registry.
-     * 
+     *
      * @return Registry
      */
     public static function connect($host = '.', $username = null, $password = null)
     {
-        // create a wmi connection
+        // create a WMI connection
         $swbemLocator = new \COM('WbemScripting.SWbemLocator', null, CP_UTF8);
         $swbemService = $swbemLocator->ConnectServer($host, 'root\default', $username, $password);
         $swbemService->Security_->ImpersonationLevel = 3;

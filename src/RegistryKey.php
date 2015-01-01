@@ -48,13 +48,13 @@ class RegistryKey
 
     /**
      * Creates a new key value object.
-     * 
+     *
      * @param \VARIANT $handle
      * The WMI registry provider handle to use.
-     * 
+     *
      * @param RegistryHive $hive
      * The registry hive the key is located in.
-     * 
+     *
      * @param string $name
      * The fully-qualified name of the key.
      */
@@ -107,8 +107,7 @@ class RegistryKey
      */
     public function delete()
     {
-        if ($this->handle->DeleteKey($this->hive->value(), $this->name) !== 0)
-        {
+        if ($this->handle->DeleteKey($this->hive->value(), $this->name) !== 0) {
             throw new OperationFailedException("Failed to delete key '{$this->name}'.");
         }
     }
@@ -135,8 +134,7 @@ class RegistryKey
     public function getParentKey()
     {
         // check if we have a parent key
-        if (dirname($this->name) !== '.')
-        {
+        if (dirname($this->name) !== '.') {
             return new static($this->handle, $this->hive, dirname($this->name));
         }
 
@@ -145,18 +143,17 @@ class RegistryKey
 
     /**
      * Creates a new registry subkey.
-     * 
+     *
      * @param string $name
      * The name or path of the key.
-     * 
+     *
      * @return RegistryKey
      */
     public function createSubKey($name)
     {
         $subKeyName = empty($this->name) ? $name : $this->name . '\\' . $name;
 
-        if ($this->handle->CreateKey($this->hive->value(), $subKeyName) !== 0)
-        {
+        if ($this->handle->CreateKey($this->hive->value(), $subKeyName) !== 0) {
             throw new OperationFailedException("Failed to create key '{$subKeyName}'.");
         }
 
@@ -165,7 +162,7 @@ class RegistryKey
 
     /**
      * Deletes a registry subkey.
-     * 
+     *
      * @param string $name
      * The name or path of the subkey to delete.
      */
@@ -185,10 +182,10 @@ class RegistryKey
 
     /**
      * Checks if a named value exists with the given name.
-     * 
+     *
      * @param string $name
      * The name of the value to check.
-     * 
+     *
      * @return boolean
      */
     public function valueExists($name)
@@ -205,21 +202,20 @@ class RegistryKey
 
     /**
      * Gets the value data of a named key value.
-     * 
+     *
      * @param string $name
      * The name of the value.
-     * 
+     *
      * @param RegistryValueType $type
      * The value type of the value.
-     * 
+     *
      * @return mixed
      * The value data of the value.
      */
     public function getValue($name, RegistryValueType $type = null)
     {
         // check if value is in the cache
-        if ($this->cache->hasValue($name))
-        {
+        if ($this->cache->hasValue($name)) {
             return $this->cache->getValueData($name);
         }
 
@@ -228,15 +224,15 @@ class RegistryKey
 
         // auto detect type
         // not recommended - see getValueType() for details
-        if (!$type)
+        if (!$type) {
             $type = $this->getValueType($name);
+        }
 
         $normalizedValue = null;
         $errorCode = 0;
 
         // get the value data type
-        switch ($type->value())
-        {
+        switch ($type->value()) {
             // string type
             case RegistryValueType::STRING:
                 // get the data of the value
@@ -258,10 +254,8 @@ class RegistryKey
                 $binaryString = '';
 
                 // enumerate over each byte
-                if (variant_get_type($valueData) & VT_ARRAY)
-                {
-                    foreach ($valueData as $byte)
-                    {
+                if (variant_get_type($valueData) & VT_ARRAY) {
+                    foreach ($valueData as $byte) {
                         // add the byte code to the byte string
                         $binaryString .= chr((int)$byte);
                     }
@@ -291,10 +285,8 @@ class RegistryKey
 
                 $stringArray = array();
                 // enumerate over each sub string
-                if (variant_get_type($valueData) & VT_ARRAY)
-                {
-                    foreach ($valueData as $subValueData)
-                    {
+                if (variant_get_type($valueData) & VT_ARRAY) {
+                    foreach ($valueData as $subValueData) {
                         $stringArray[] = (string)$subValueData;
                     }
                 }
@@ -302,7 +294,7 @@ class RegistryKey
                 $normalizedValue = $stringArray;
                 break;
         }
-        
+
         $this->cache->storeValue($name, $type, $normalizedValue);
 
         return $normalizedValue;
@@ -311,26 +303,17 @@ class RegistryKey
     public function setValue($name, $value, RegistryValueType $type = null)
     {
         // automatically choose a type if no type is specified
-        if (!$type)
-        {
-            if (is_array($value))
-            {
+        if (!$type) {
+            if (is_array($value)) {
                 $type = RegistryValueType::MULTI_STRING();
-            }
-
-            else if (is_numeric($value))
-            {
+            } elseif (is_numeric($value)) {
                 $type = RegistryValueType::DWORD();
-            }
-
-            else
-            {
+            } else {
                 $type = RegistryValueType::STRING();
             }
         }
 
-        switch ($type->value())
-        {
+        switch ($type->value()) {
             case RegistryValueType::STRING:
                 $this->handle->SetStringValue($this->hive, $keyPath, $name, (string)$value);
                 break;
@@ -340,8 +323,7 @@ class RegistryKey
                 break;
 
             case RegistryValueType::BINARY:
-                if (is_string($value))
-                {
+                if (is_string($value)) {
                     $value = array_map('ord', str_split($value));
                 }
                 $this->handle->SetBinaryValue($this->defKey, $keyPath, $name, $value);
@@ -352,8 +334,7 @@ class RegistryKey
                 break;
 
             case RegistryValueType::MULTI_STRING:
-                if (!is_array($value))
-                {
+                if (!is_array($value)) {
                     throw new Exception("Cannot set non-array type as MultiString.");
                 }
                 $this->handle->GetMultiStringValue($this->defKey, $keyPath, $name, $value);
@@ -366,7 +347,7 @@ class RegistryKey
 
     /**
      * Deletes a named value from the key.
-     * 
+     *
      * @param string $name
      * The name of the named value to delete.
      */
@@ -389,28 +370,25 @@ class RegistryKey
      *
      * Note that this is an expensive operation if the value is not in the
      * cache, especially for keys with lots of values.
-     * 
+     *
      * @param string $name
      * The name of the value.
-     * 
+     *
      * @return RegistryValueType
      */
     public function getValueType($name)
     {
         // is the value cached?
-        if ($this->cache->hasValue($name))
-        {
+        if ($this->cache->hasValue($name)) {
             // get the type from the cache
             return $this->cache->getValueType($name);
         }
 
         // iterate over all values in the key
         $iterator = $this->getValueIterator();
-        foreach ($iterator as $key => $value)
-        {
+        foreach ($iterator as $key => $value) {
             // is this the value we are looking for?
-            if ($key === $name)
-            {
+            if ($key === $name) {
                 // value is now cached through the iterator
                 return $iterator->currentType();
             }

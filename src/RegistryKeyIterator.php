@@ -104,8 +104,7 @@ class RegistryKeyIterator implements \RecursiveIterator
         );
 
         // make sure the enum isn't empty
-        if ($errorCode === 0 && (variant_get_type($this->subKeyNames) & VT_ARRAY))
-        {
+        if ($errorCode === 0 && (variant_get_type($this->subKeyNames) & VT_ARRAY)) {
             // store the number of subkeys
             $this->count = count($this->subKeyNames);
         }

@@ -1,0 +1,2 @@
+# ensure lf line ending for php files
+*.php text eol=lf

@@ -18,4 +18,5 @@
 namespace Coderstephen\Windows\Registry;
 
 class OperationFailedException extends \RuntimeException implements Exception
-{}
+{
+}

@@ -18,4 +18,5 @@
 namespace Coderstephen\Windows\Registry;
 
 interface Exception
-{}
+{
+}

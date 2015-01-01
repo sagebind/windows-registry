@@ -35,10 +35,10 @@ class ValueCache
 
     /**
      * Checks if a named value is in the cache.
-     * 
+     *
      * @param string $name
      * The name of the value.
-     * 
+     *
      * @return boolean
      */
     public function hasValue($name)
@@ -48,47 +48,45 @@ class ValueCache
 
     /**
      * Gets the data type of a named value in the cache.
-     * 
+     *
      * @param string $name
      * The name of the value.
-     * 
+     *
      * @return RegistryValueType
      */
     public function getValueType($name)
     {
-        if ($this->hasValue($name))
-        {
+        if ($this->hasValue($name)) {
             return $this->valueTypes[$name];
         }
     }
 
     /**
      * Gets the value data of a named value in the cache.
-     * 
+     *
      * @param string $name
      * The name of the value.
-     * 
+     *
      * @return mixed
      */
     public function getValueData($name)
     {
-        if ($this->hasValue($name))
-        {
+        if ($this->hasValue($name)) {
             return $this->valueData[$name];
         }
     }
 
     /**
      * Stores a named value in the cache.
-     * 
+     *
      * If the value is already in the cache, it will be overwritten.
-     * 
+     *
      * @param string $name
      * The name of the value to cache.
-     * 
+     *
      * @param RegistryValueType $type
      * The data type of the value.
-     * 
+     *
      * @param mixed $data
      * The value data of the value.
      */
