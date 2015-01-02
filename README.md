@@ -35,7 +35,7 @@ catch (Registry\Exception $e)
 }
 
 // create a new value
-$mySubKey->setValue('Example DWORD Value', 250, Registry\RegistryValueType::DWORD());
+$mySubKey->setValue('Example DWORD Value', 250, Registry\RegistryKey::TYPE_DWORD);
 
 // delete the new value
 $mySubKey->deleteValue('Example DWORD Value');
@@ -43,7 +43,7 @@ $mySubKey->deleteValue('Example DWORD Value');
 // delete the new key
 try
 {
-    $mySubKey->delete();
+    $hklm->deleteSubKey($keyPath);
 }
 catch (Registry\Exception $e)
 {
