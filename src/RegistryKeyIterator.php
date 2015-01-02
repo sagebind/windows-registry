@@ -18,50 +18,63 @@
 namespace Coderstephen\Windows\Registry;
 
 /**
- * Iterates over subkeys of a registry key.
+ * Iterates over the subkeys of a registry key.
  */
 class RegistryKeyIterator implements \RecursiveIterator
 {
     /**
-     * The key we are iterating subkeys of.
-     * @var RegistryKey
-     */
-    protected $registryKey;
-
-    /**
-     * The WMI StdRegProv object handle.
-     * @var \COM
+     * An open registry handle.
+     * @type RegistryHandle
      */
     protected $handle;
 
     /**
+     * The registry hive the key is located in.
+     * @type int
+     */
+    protected $hive;
+
+    /**
+     * Fully-qualified name of the key.
+     * @type string
+     */
+    protected $keyName;
+
+    /**
      * The current iterator position.
-     * @var int
+     * @type int
      */
     protected $pointer = 0;
 
     /**
      * The number of subkeys we are iterating over.
-     * @var int
+     * @type int
      */
     protected $count = 0;
 
     /**
      * A (hopefully) enumerable variant containing the names of subkeys.
-     * @var VARIANT
+     * @type VARIANT
      */
     protected $subKeyNames;
 
     /**
      * Creates a new registry key iterator.
      *
-     * @param RegistryKey $registryKey
-     * The parent key of the subkeys to iterate over.
+     * @param RegistryHandle $handle
+     * The WMI registry provider handle to use.
+     *
+     * @param int $hive
+     * The registry hive the key is located in.
+     *
+     * @param string $name
+     * The fully-qualified name of the key.
      */
-    public function __construct(RegistryKey $registryKey)
+    public function __construct(RegistryHandle $handle, $hive, $name)
     {
-        $this->registryKey = $registryKey;
-        $this->handle = $registryKey->getHandle();
+        $this->handle = $handle;
+        $this->hive = $hive;
+        $this->keyName = $name;
     }
 
     /**
@@ -97,11 +110,7 @@ class RegistryKeyIterator implements \RecursiveIterator
         $this->subKeyNames = new \VARIANT();
 
         // attempt to enumerate subkeys
-        $errorCode = $this->handle->EnumKey(
-            $this->registryKey->getHive()->value(),
-            $this->registryKey->getQualifiedName(),
-            $this->subKeyNames
-        );
+        $errorCode = $this->handle->enumKey($this->hive, $this->keyName, $this->subKeyNames);
 
         // make sure the enum isn't empty
         if ($errorCode === 0 && (variant_get_type($this->subKeyNames) & VT_ARRAY)) {

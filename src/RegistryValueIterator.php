@@ -23,51 +23,64 @@ namespace Coderstephen\Windows\Registry;
 class RegistryValueIterator implements \Iterator
 {
     /**
-     * The key we are iterating subkeys of.
-     * @var RegistryKey
-     */
-    protected $registryKey;
-
-    /**
-     * The WMI StdRegProv object handle.
-     * @var \COM
+     * An open registry handle.
+     * @type RegistryHandle
      */
     protected $handle;
 
     /**
+     * The registry hive the key is located in.
+     * @type int
+     */
+    protected $hive;
+
+    /**
+     * Fully-qualified name of the key.
+     * @type string
+     */
+    protected $keyName;
+
+    /**
      * The current iterator position.
-     * @var int
+     * @type int
      */
     protected $pointer = 0;
 
     /**
      * The number of values we are iterating over.
-     * @var int
+     * @type int
      */
     protected $count = 0;
 
     /**
      * A (hopefully) enumerable variant containing the value names.
-     * @var VARIANT
+     * @type VARIANT
      */
     protected $valueNames;
 
     /**
      * A (hopefully) enumerable variant containing the data types of values.
-     * @var VARIANT
+     * @type VARIANT
      */
     protected $valueTypes;
 
     /**
      * Creates a new registry value iterator.
      *
-     * @param RegistryKey $registryKey
-     * The key whose values to iterate over.
+     * @param RegistryHandle $handle
+     * The WMI registry provider handle to use.
+     *
+     * @param int $hive
+     * The registry hive the key is located in.
+     *
+     * @param string $name
+     * The fully-qualified name of the key.
      */
-    public function __construct(RegistryKey $registryKey)
+    public function __construct(RegistryHandle $handle, $hive, $name)
     {
-        $this->registryKey = $registryKey;
-        $this->handle = $registryKey->getHandle();
+        $this->handle = $handle;
+        $this->hive = $hive;
+        $this->keyName = $name;
     }
 
     /**
@@ -84,8 +97,8 @@ class RegistryValueIterator implements \Iterator
         $this->valueTypes = new \VARIANT();
 
         // attempt to enumerate values
-        $errorCode = $this->handle->EnumValues(
-            $this->registryKey->getHive()->value(),
+        $errorCode = $this->handle->enumValues(
+            $this->registryKey->getHive(),
             $this->registryKey->getQualifiedName(),
             $this->valueNames,
             $this->valueTypes
@@ -102,6 +115,7 @@ class RegistryValueIterator implements \Iterator
 
     /**
      * Checks if the current iteration position is valid.
+     *
      * @return boolean
      */
     public function valid()
@@ -128,11 +142,12 @@ class RegistryValueIterator implements \Iterator
      */
     public function currentType()
     {
-        return RegistryValueType::memberByValue((int)$this->valueTypes[$this->pointer]);
+        return (int)$this->valueTypes[$this->pointer];
     }
 
     /**
      * Gets the name of the registry value at the current iteration position.
+     *
      * @return string
      */
     public function key()
