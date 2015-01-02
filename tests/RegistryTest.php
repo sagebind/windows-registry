@@ -22,17 +22,17 @@ use Coderstephen\Windows\Registry\RegistryHandle;
 
 class RegistryTest extends \PHPUnit_Framework_TestCase
 {
-    protected $handle;
+    protected $stubHandle;
     protected $registry;
 
     public function setUp()
     {
-        $this->handle = $this->getMockBuilder(RegistryHandle::class)->disableOriginalConstructor()->getMock();
-        $this->registry = new Registry($this->handle);
+        $this->stubHandle = $this->getMockBuilder(RegistryHandle::class)->disableOriginalConstructor()->getMock();
+        $this->registry = new Registry($this->stubHandle);
     }
 
     public function testGetHandle()
     {
-        $this->assertSame($this->handle, $this->registry->getHandle());
+        $this->assertSame($this->stubHandle, $this->registry->getHandle());
     }
 }

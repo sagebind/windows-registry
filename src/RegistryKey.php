@@ -68,7 +68,10 @@ final class RegistryKey
      */
     public function getName()
     {
-        return basename($this->name);
+        if (strpos($this->name, '\\') !== false) {
+            return substr($this->name, strpos($this->name, '\\') + 1);
+        }
+        return $this->name;
     }
 
     /**
