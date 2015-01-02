@@ -21,12 +21,13 @@ namespace Coderstephen\Windows\Registry;
  * Creates connections to a computer's registry and provides base keys for
  * accessing subkeys.
  */
-class Registry
+final class Registry
 {
-    /**
-     * A handle to the WMI registry provider.
-     */
-    protected $handle;
+    const HKEY_CLASSES_ROOT = 0x80000000;
+    const HKEY_CURRENT_USER = 0x80000001;
+    const HKEY_LOCAL_MACHINE = 0x80000002;
+    const HKEY_USERS = 0x80000003;
+    const HKEY_CURRENT_CONFIG = 0x80000005;
 
     /**
      * Connects to a registry and returns a registry instance.
@@ -51,9 +52,34 @@ class Registry
         $swbemService->Security_->ImpersonationLevel = 3;
 
         // initialize registry provider
-        $registryObject = new static();
-        $registryObject->handle = $swbemService->Get('StdRegProv');
-        return $registryObject;
+        $handle = new RegistryHandle($swbemService->Get('StdRegProv'));
+        return new static($handle);
+    }
+
+    /**
+     * An open registry handle.
+     * @type RegistryHandle
+     */
+    protected $handle;
+
+    /**
+     * Creates a new registry connection object.
+     *
+     * @param RegistryHandle $handle
+     * The WMI registry provider handle to use.
+     */
+    public function __construct(RegistryHandle $handle)
+    {
+        $this->handle = $handle;
+    }
+
+    /**
+     * Gets the underlying handle object used to access the registry.
+     * @return RegistryHandle
+     */
+    public function getHandle()
+    {
+        return $this->handle;
     }
 
     /**
@@ -62,7 +88,7 @@ class Registry
      */
     public function getClassesRoot()
     {
-        return new RegistryKey($this->handle, RegistryHive::CLASSES_ROOT(), '');
+        return new RegistryKey($this->handle, Registry::HKEY_CLASSES_ROOT, '');
     }
 
     /**
@@ -71,7 +97,7 @@ class Registry
      */
     public function getCurrentConfig()
     {
-        return new RegistryKey($this->handle, RegistryHive::CURRENT_CONFIG(), '');
+        return new RegistryKey($this->handle, Registry::HKEY_CURRENT_CONFIG, '');
     }
 
     /**
@@ -80,7 +106,7 @@ class Registry
      */
     public function getCurrentUser()
     {
-        return new RegistryKey($this->handle, RegistryHive::CURRENT_USER(), '');
+        return new RegistryKey($this->handle, Registry::HKEY_CURRENT_USER, '');
     }
 
     /**
@@ -89,7 +115,7 @@ class Registry
      */
     public function getLocalMachine()
     {
-        return new RegistryKey($this->handle, RegistryHive::LOCAL_MACHINE(), '');
+        return new RegistryKey($this->handle, Registry::HKEY_LOCAL_MACHINE, '');
     }
 
     /**
@@ -98,15 +124,6 @@ class Registry
      */
     public function getUsers()
     {
-        return new RegistryKey($this->handle, RegistryHive::USERS(), '');
-    }
-
-    /**
-     * Gets the underlying handle object used to access the registry.
-     * @return \VARIANT
-     */
-    public function getHandle()
-    {
-        return $this->handle;
+        return new RegistryKey($this->handle, Registry::HKEY_USERS, '');
     }
 }
