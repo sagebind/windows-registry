@@ -15,10 +15,10 @@
  * under the License.
  */
 
-namespace Coderstephen\Windows\Registry\Tests;
+namespace Windows\Registry\Tests;
 
-use Coderstephen\Windows\Registry\Registry;
-use Coderstephen\Windows\Registry\RegistryHandle;
+use Windows\Registry\Registry;
+use Windows\Registry\RegistryHandle;
 
 class RegistryTest extends \PHPUnit_Framework_TestCase
 {

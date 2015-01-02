@@ -15,7 +15,7 @@
  * under the License.
  */
 
-namespace Coderstephen\Windows\Registry;
+namespace Windows\Registry;
 
 interface Exception
 {

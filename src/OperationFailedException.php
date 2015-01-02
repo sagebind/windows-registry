@@ -15,7 +15,7 @@
  * under the License.
  */
 
-namespace Coderstephen\Windows\Registry;
+namespace Windows\Registry;
 
 class OperationFailedException extends \RuntimeException implements Exception
 {

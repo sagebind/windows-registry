@@ -20,8 +20,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Coderstephen\\Windows\\Registry\\": "src/",
-            "Coderstephen\\Windows\\Registry\\Tests\\": "tests/"
+            "Windows\\Registry\\": "src/",
+            "Windows\\Registry\\Tests\\": "tests/"
         }
     }
 }
