@@ -13,12 +13,15 @@
     ],
     "require": {
         "php": ">=5.3",
-        "ext-com_dotnet": "*",
-        "eloquent/enumeration": "~5.1"
+        "ext-com_dotnet": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0"
     },
     "autoload": {
         "psr-4": {
-            "Coderstephen\\Windows\\Registry\\": "src/"
+            "Coderstephen\\Windows\\Registry\\": "src/",
+            "Coderstephen\\Windows\\Registry\\Tests\\": "tests/"
         }
     }
 }
