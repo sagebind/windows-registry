@@ -6,7 +6,7 @@ This library can be (and has been) used in production code, but *please consider
 
 ## Features
 - Read and write access to any hive, key, or value in the registry (that you have permissions to)
-- Automatic conversion between all registry value data types and PHP scalar types
+- Automatic conversion between all registry value data types to PHP scalar types
 - Lazy-loaded iterators over lists of values and recursive iterators over keys and subkeys
 - Ability to connect to registries on remote computers using a remote WMI (Windows Management Instrumentation) connection (see Microsoft's docs on [how to connect to WMI remotely](https://msdn.microsoft.com/en-us/library/aa389290%28v=vs.85%29.aspx) for details)
 
