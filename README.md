@@ -1,6 +1,14 @@
 # Windows Registry Wrapper
-A small library for accessing and manipulating the Windows registry. For that
-one time that you need to access the Windows registry in a PHP application.
+A small library for accessing and manipulating the Registry on Microsoft Windows systems. For that
+one time that you need to access the Windows Registry in a PHP application.
+
+This library can be (and has been) used in production code, but *please consider* reading the [disclaimer]() below before using.
+
+## Features
+- Read and write access to any hive, key, or value in the registry (that you have permissions to)
+- Automatic conversion between all registry value data types and PHP scalar types
+- Lazy-loaded iterators over lists of values and recursive iterators over keys and subkeys
+- Ability to connect to registries on remote computers using a remote WMI (Windows Management Instrumentation) connection (see Microsoft's docs on [how to connect to WMI remotely](https://msdn.microsoft.com/en-us/library/aa389290%28v=vs.85%29.aspx) for details)
 
 ## Requirements
 - Microsoft Windows (Vista or newer) or Windows Server (Windows Server 2003 or
@@ -11,7 +19,7 @@ one time that you need to access the Windows registry in a PHP application.
 Use [Composer](http://getcomposer.org):
 
 ```sh
-> composer require coderstephen/windows-registry:dev-master
+> composer require coderstephen/windows-registry:~0.9
 ```
 
 ## Examples
@@ -66,9 +74,9 @@ foreach ($key->getValueIterator() as $name => $value)
 ```
 
 ## Disclaimer
-Messing with the Windows registry can be dangerous; Microsoft has plenty of
-warnings about how it can destroy your installation. Not only should you be
-careful when accessing the registry, this library is not guaranteed to be 100%
-safe to use and free of bugs. Use discretion, and test your code in a virtual
-machine if possible. I am not liable for any damages caused by this library.
+Messing with the Windows Registry can be dangerous; Microsoft has plenty of
+warnings about how it can **destroy your installation**. Not only should you be
+careful when accessing the Registry, this library is *not guaranteed* to be 100%
+safe to use and free of bugs. Use discretion, and *test your code in a virtual
+machine if possible**. I am not liable for *any* damages caused by this library.
 See the [license](LICENSE) for details.
