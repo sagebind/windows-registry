@@ -2,7 +2,7 @@
 A small library for accessing and manipulating the Registry on Microsoft Windows systems. For that
 one time that you need to access the Windows Registry in a PHP application.
 
-This library can be (and has been) used in production code, but *please consider* reading the [disclaimer]() below before using.
+This library can be (and has been) used in production code, but *please consider* reading the [disclaimer](#disclaimer) below before using.
 
 ## Features
 - Read and write access to any hive, key, or value in the registry (that you have permissions to)
@@ -77,6 +77,6 @@ foreach ($key->getValueIterator() as $name => $value)
 Messing with the Windows Registry can be dangerous; Microsoft has plenty of
 warnings about how it can **destroy your installation**. Not only should you be
 careful when accessing the Registry, this library is *not guaranteed* to be 100%
-safe to use and free of bugs. Use discretion, and *test your code in a virtual
+safe to use and free of bugs. Use discretion, and **test your code in a virtual
 machine if possible**. I am not liable for *any* damages caused by this library.
 See the [license](LICENSE) for details.
