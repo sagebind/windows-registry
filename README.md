@@ -1,5 +1,6 @@
 # Windows Registry Wrapper
 [![Version](https://img.shields.io/packagist/v/coderstephen/windows-registry.svg)](https://packagist.org/packages/coderstephen/windows-registry)
+[![License](https://img.shields.io/packagist/l/coderstephen/windows-registry.svg)](https://packagist.org/packages/coderstephen/windows-registry)
 
 A small library for accessing and manipulating the Registry on Microsoft Windows systems. For that
 one time that you need to access the Windows Registry in a PHP application.
