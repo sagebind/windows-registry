@@ -59,4 +59,16 @@ class RegistryKeyTest extends \PHPUnit_Framework_TestCase
         $key = $this->newKey(Registry::HKEY_LOCAL_MACHINE, 'Software\Microsoft');
         $this->assertSame('Software\Microsoft', $key->getQualifiedName());
     }
+
+    public function testGetParentKey()
+    {
+        $key = $this->newKey(Registry::HKEY_LOCAL_MACHINE, 'Software\Microsoft');
+        $this->assertSame('Software', $key->getParentKey()->getQualifiedName());
+    }
+
+    public function testGetParentKeyGetsHiveKey()
+    {
+        $key = $this->newKey(Registry::HKEY_LOCAL_MACHINE, 'Software');
+        $this->assertSame('', $key->getParentKey()->getQualifiedName());
+    }
 }
