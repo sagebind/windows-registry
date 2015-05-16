@@ -232,7 +232,7 @@ final class RegistryKey
             // expanded string type
             case self::TYPE_EXPAND_SZ:
                 // get the data of the value
-                $this->handle->getExpandedStringValue($this->hive, $this->name, $name, $valueData);
+                $errorCode = $this->handle->getExpandedStringValue($this->hive, $this->name, $name, $valueData);
                 $normalizedValue = (string)$valueData;
                 break;
 
@@ -256,21 +256,21 @@ final class RegistryKey
             // int type
             case self::TYPE_DWORD:
                 // get the data of the value
-                $this->handle->getDWORDValue($this->hive, $this->name, $name, $valueData);
+                $errorCode = $this->handle->getDWORDValue($this->hive, $this->name, $name, $valueData);
                 $normalizedValue = (int)$valueData;
                 break;
 
-            // int type
+            // big-int type
             case self::TYPE_QWORD:
                 // get the data of the value
-                $this->handle->getQWORDValue($this->hive, $this->name, $name, $valueData);
+                $errorCode = $this->handle->getQWORDValue($this->hive, $this->name, $name, $valueData);
                 $normalizedValue = (string)$valueData;
                 break;
 
             // string array type
             case self::TYPE_MULTI_SZ:
                 // get the data of the value
-                $this->handle->getMultiStringValue($this->hive, $this->name, $name, $valueData);
+                $errorCode = $this->handle->getMultiStringValue($this->hive, $this->name, $name, $valueData);
 
                 $stringArray = array();
                 // enumerate over each sub string
@@ -282,6 +282,11 @@ final class RegistryKey
 
                 $normalizedValue = $stringArray;
                 break;
+        }
+
+        // check for successful read
+        if ($errorCode !== 0) {
+            throw new OperationFailedException("Failed to read value \"{$name}\".");
         }
 
         return $normalizedValue;
@@ -296,35 +301,44 @@ final class RegistryKey
      */
     public function setValue($name, $value, $type)
     {
+        // store error code to check for success later
+        $errorCode = 0;
+
+        // set differently depending on type
         switch ($type) {
             case self::TYPE_SZ:
-                $this->handle->setStringValue($this->hive, $keyPath, $name, (string)$value);
+                $errorCode = $this->handle->setStringValue($this->hive, $keyPath, $name, (string)$value);
                 break;
 
             case self::TYPE_EXPAND_SZ:
-                $this->handle->setExpandedStringValue($this->hive, $keyPath, $name, (string)$value);
+                $errorCode = $this->handle->setExpandedStringValue($this->hive, $keyPath, $name, (string)$value);
                 break;
 
             case self::TYPE_BINARY:
                 if (is_string($value)) {
                     $value = array_map('ord', str_split($value));
                 }
-                $this->handle->setBinaryValue($this->defKey, $keyPath, $name, $value);
+                $errorCode = $this->handle->setBinaryValue($this->defKey, $keyPath, $name, $value);
                 break;
 
             case self::TYPE_DWORD:
-                $this->handle->setDWORDValue($this->hive, $keyPath, $name, (int)$value);
+                $errorCode = $this->handle->setDWORDValue($this->hive, $keyPath, $name, (int)$value);
                 break;
 
             case self::TYPE_MULTI_SZ:
                 if (!is_array($value)) {
                     throw new Exception('Cannot set non-array type as MultiString.');
                 }
-                $this->handle->setMultiStringValue($this->defKey, $keyPath, $name, $value);
+                $errorCode = $this->handle->setMultiStringValue($this->defKey, $keyPath, $name, $value);
                 break;
 
             default:
                 throw new InvalidTypeException("The value {$type} is not a valid registry type.");
+        }
+
+        // check for successful write
+        if ($errorCode !== 0) {
+            throw new OperationFailedException("Failed to write value \"{$name}\".");
         }
     }
 
