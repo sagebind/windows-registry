@@ -24,63 +24,56 @@ class RegistryValueIterator implements \Iterator
 {
     /**
      * An open registry handle.
-     * @type RegistryHandle
+     *
+     * @var RegistryHandle
      */
     protected $handle;
 
     /**
-     * The registry hive the key is located in.
-     * @type int
+     * The registry key whose values are being iterated over.
+     *
+     * @var RegistryKey
      */
-    protected $hive;
-
-    /**
-     * Fully-qualified name of the key.
-     * @type string
-     */
-    protected $keyName;
+    protected $registryKey;
 
     /**
      * The current iterator position.
-     * @type int
+     *
+     * @var int
      */
     protected $pointer = 0;
 
     /**
      * The number of values we are iterating over.
-     * @type int
+     *
+     * @var int
      */
     protected $count = 0;
 
     /**
      * A (hopefully) enumerable variant containing the value names.
-     * @type VARIANT
+     *
+     * @var \VARIANT
      */
     protected $valueNames;
 
     /**
      * A (hopefully) enumerable variant containing the data types of values.
-     * @type VARIANT
+     *
+     * @var \VARIANT
      */
     protected $valueTypes;
 
     /**
      * Creates a new registry value iterator.
      *
-     * @param RegistryHandle $handle
-     * The WMI registry provider handle to use.
-     *
-     * @param int $hive
-     * The registry hive the key is located in.
-     *
-     * @param string $name
-     * The fully-qualified name of the key.
+     * @param RegistryHandle $handle The WMI registry provider handle to use.
+     * @param RegistryKey    $key    The registry key whose values to iterate over.
      */
-    public function __construct(RegistryHandle $handle, $hive, $name)
+    public function __construct(RegistryHandle $handle, RegistryKey $key)
     {
         $this->handle = $handle;
-        $this->hive = $hive;
-        $this->keyName = $name;
+        $this->registryKey = $key;
     }
 
     /**
@@ -116,7 +109,7 @@ class RegistryValueIterator implements \Iterator
     /**
      * Checks if the current iteration position is valid.
      *
-     * @return boolean
+     * @return bool
      */
     public function valid()
     {

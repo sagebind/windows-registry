@@ -31,19 +31,22 @@ final class RegistryKey
 
     /**
      * An open registry handle.
-     * @type RegistryHandle
+     *
+     * @var RegistryHandle
      */
     protected $handle;
 
     /**
      * The registry hive the key is located in.
-     * @type int
+     *
+     * @var int
      */
     protected $hive;
 
     /**
      * Fully-qualified name of the key.
-     * @type string
+     *
+     * @var string
      */
     protected $name;
 
@@ -107,12 +110,13 @@ final class RegistryKey
     /**
      * Gets a registry subkey with the specified name.
      *
-     * @param  string      $name The name or path of the subkey.
+     * @param string $name The name or path of the subkey.
+     *
      * @return RegistryKey
      */
     public function getSubKey($name)
     {
-        $subKeyName = empty($this->name) ? $name : $this->name . '\\' . $name;
+        $subKeyName = empty($this->name) ? $name : $this->name.'\\'.$name;
 
         // call EnumKeys on the subkey to check if it exists
         $sNames = new \VARIANT();
@@ -136,18 +140,19 @@ final class RegistryKey
             return new static($this->handle, $this->hive, dirname($this->name));
         }
 
-        return null;
+        return;
     }
 
     /**
      * Creates a new registry subkey.
      *
-     * @param  string      $name The name or path of the key relative to the current key.
+     * @param string $name The name or path of the key relative to the current key.
+     *
      * @return RegistryKey
      */
     public function createSubKey($name)
     {
-        $subKeyName = empty($this->name) ? $name : $this->name . '\\' . $name;
+        $subKeyName = empty($this->name) ? $name : $this->name.'\\'.$name;
 
         if ($this->handle->createKey($this->hive, $subKeyName) !== 0) {
             throw new OperationFailedException("Failed to create key \"{$subKeyName}\".");
@@ -163,7 +168,7 @@ final class RegistryKey
      */
     public function deleteSubKey($name)
     {
-        $subKeyName = empty($this->name) ? $name : $this->name . '\\' . $name;
+        $subKeyName = empty($this->name) ? $name : $this->name.'\\'.$name;
 
         if ($this->handle->deleteKey($this->hive, $subKeyName) !== 0) {
             throw new OperationFailedException("Failed to delete key '{$subKeyName}'.");
@@ -183,8 +188,9 @@ final class RegistryKey
     /**
      * Checks if a named value exists with the given name.
      *
-     * @param  string  $name The name of the value to check.
-     * @return boolean       True if the value exists, otherwise false.
+     * @param string $name The name of the value to check.
+     *
+     * @return bool True if the value exists, otherwise false.
      */
     public function valueExists($name)
     {
@@ -201,9 +207,10 @@ final class RegistryKey
     /**
      * Gets the value data of a named key value.
      *
-     * @param  string $name The name of the value.
-     * @param  int    $type The value type of the value.
-     * @return mixed        The value data of the value.
+     * @param string $name The name of the value.
+     * @param int    $type The value type of the value.
+     *
+     * @return mixed The value data of the value.
      */
     public function getValue($name, $type = null)
     {
@@ -317,7 +324,7 @@ final class RegistryKey
 
             case self::TYPE_MULTI_SZ:
                 if (!is_array($value)) {
-                    throw new Exception("Cannot set non-array type as MultiString.");
+                    throw new Exception('Cannot set non-array type as MultiString.');
                 }
                 $this->handle->setMultiStringValue($this->defKey, $keyPath, $name, $value);
                 break;
@@ -353,7 +360,7 @@ final class RegistryKey
      */
     public function getValueIterator()
     {
-        return new RegistryValueIterator($this->handle, $this->hive, $this->name);
+        return new RegistryValueIterator($this->handle, $this);
     }
 
     /**
@@ -362,8 +369,9 @@ final class RegistryKey
      * Note that this is a relatively expensive operation, especially for keys
      * with lots of values.
      *
-     * @param  string $name The name of the value.
-     * @return int          The type of the value.
+     * @param string $name The name of the value.
+     *
+     * @return int The type of the value.
      */
     public function getValueType($name)
     {
