@@ -30,7 +30,7 @@ Below is an example of creating a new registry key with some values and then
 deleting them.
 
 ```php
-use Coderstephen\Windows\Registry;
+use Windows\Registry;
 
 $hklm = Registry\Registry::connect()->getLocalMachine();
 $keyPath = 'Software\\MyKey\\MySubKey';
