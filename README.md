@@ -1,5 +1,7 @@
 # Windows Registry Wrapper
+[![Build](https://img.shields.io/scrutinizer/build/g/coderstephen/windows-registry.svg)](https://scrutinizer-ci.com/g/coderstephen/windows-registry)
 [![Version](https://img.shields.io/packagist/v/coderstephen/windows-registry.svg)](https://packagist.org/packages/coderstephen/windows-registry)
+[![Code Quality](https://img.shields.io/scrutinizer/g/coderstephen/windows-registry.svg)](https://scrutinizer-ci.com/g/coderstephen/windows-registry)
 [![License](https://img.shields.io/packagist/l/coderstephen/windows-registry.svg)](https://packagist.org/packages/coderstephen/windows-registry)
 
 A small library for accessing and manipulating the Registry on Microsoft Windows systems. For that
