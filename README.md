@@ -67,7 +67,7 @@ You can also iterate over subkeys and values using built-in iterators:
 ```php
 foreach ($key->getSubKeyIterator() as $name => $subKey)
 {
-    print $subKey->getQualifiedName();
+    print $subKey->getQualifiedName() . PHP_EOL;
 }
 
 foreach ($key->getValueIterator() as $name => $value)
