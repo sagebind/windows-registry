@@ -78,7 +78,7 @@ class RegistryKeyIterator implements \RecursiveIterator
      */
     public function getChildren()
     {
-        return new static($this->current());
+        return new static($this->handle, $this->current());
     }
 
     /**
