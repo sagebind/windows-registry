@@ -28,14 +28,9 @@ class RegistryKeyIterator implements \RecursiveIterator
     protected $handle;
 
     /**
-     * @var int The registry hive the key is located in.
+     * @var RegistryKey The registry key whose values are being iterated over.
      */
-    protected $hive;
-
-    /**
-     * @var string Fully-qualified name of the key.
-     */
-    protected $keyName;
+    protected $registryKey;
 
     /**
      * @var int The current iterator position.
@@ -56,14 +51,12 @@ class RegistryKeyIterator implements \RecursiveIterator
      * Creates a new registry key iterator.
      *
      * @param RegistryHandle $handle The WMI registry provider handle to use.
-     * @param int            $hive   The registry hive the key is located in.
-     * @param string         $name   The fully-qualified name of the key.
+     * @param RegistryKey    $key    The registry key whose subkeys to iterate over.
      */
-    public function __construct(RegistryHandle $handle, $hive, $name)
+    public function __construct(RegistryHandle $handle, RegistryKey $key)
     {
         $this->handle = $handle;
-        $this->hive = $hive;
-        $this->keyName = $name;
+        $this->registryKey = $key;
     }
 
     /**
@@ -101,7 +94,10 @@ class RegistryKeyIterator implements \RecursiveIterator
         $this->subKeyNames = new \VARIANT();
 
         // attempt to enumerate subkeys
-        $errorCode = $this->handle->enumKey($this->hive, $this->keyName, $this->subKeyNames);
+        $errorCode = $this->handle->enumKey(
+            $this->registryKey->getHive(),
+            $this->registryKey->getQualifiedName(),
+            $this->subKeyNames);
 
         // make sure the enum isn't empty
         if ($errorCode === 0 && (variant_get_type($this->subKeyNames) & VT_ARRAY)) {

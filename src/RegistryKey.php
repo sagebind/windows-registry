@@ -176,7 +176,7 @@ final class RegistryKey
      */
     public function getSubKeyIterator()
     {
-        return new RegistryKeyIterator($this->handle, $this->hive, $this->name);
+        return new RegistryKeyIterator($this->handle, $this);
     }
 
     /**
