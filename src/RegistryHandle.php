@@ -25,8 +25,7 @@ namespace Windows\Registry;
 class RegistryHandle
 {
     /**
-     * An StdRegProv instance.
-     * @type \VARIANT
+     * @var \VARIANT An StdRegProv instance.
      */
     protected $stdRegProv;
 
@@ -43,16 +42,18 @@ class RegistryHandle
     /**
      * Calls a dynamic method of the StdRegProv instance.
      *
-     * @param  string $name  The name of the method to call.
-     * @param  array  &$args An array of arguments to pass to the method.
-     * @return mixed         The return value of the method call.
+     * @param string $name  The name of the method to call.
+     * @param array  &$args An array of arguments to pass to the method.
+     *
+     * @return mixed The return value of the method call.
      */
     public function __call($name, $args)
     {
         $argRefs = array();
-        foreach($args as $key => &$arg){
+        foreach ($args as $key => &$arg) {
             $argRefs[$key] = &$arg;
         }
+
         return call_user_func_array(array($this->stdRegProv, ucfirst($name)), $argRefs);
     }
 }

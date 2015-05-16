@@ -30,23 +30,17 @@ final class RegistryKey
     const TYPE_QWORD = 11;
 
     /**
-     * An open registry handle.
-     *
-     * @var RegistryHandle
+     * @var RegistryHandle An open registry handle.
      */
     protected $handle;
 
     /**
-     * The registry hive the key is located in.
-     *
-     * @var int
+     * @var int The registry hive the key is located in.
      */
     protected $hive;
 
     /**
-     * Fully-qualified name of the key.
-     *
-     * @var string
+     * @var string Fully-qualified name of the key.
      */
     protected $name;
 

@@ -23,52 +23,41 @@ namespace Windows\Registry;
 class RegistryKeyIterator implements \RecursiveIterator
 {
     /**
-     * An open registry handle.
-     * @type RegistryHandle
+     * @var RegistryHandle An open registry handle.
      */
     protected $handle;
 
     /**
-     * The registry hive the key is located in.
-     * @type int
+     * @var int The registry hive the key is located in.
      */
     protected $hive;
 
     /**
-     * Fully-qualified name of the key.
-     * @type string
+     * @var string Fully-qualified name of the key.
      */
     protected $keyName;
 
     /**
-     * The current iterator position.
-     * @type int
+     * @var int The current iterator position.
      */
     protected $pointer = 0;
 
     /**
-     * The number of subkeys we are iterating over.
-     * @type int
+     * @var int The number of subkeys we are iterating over.
      */
     protected $count = 0;
 
     /**
-     * A (hopefully) enumerable variant containing the names of subkeys.
-     * @type VARIANT
+     * @var \VARIANT A (hopefully) enumerable variant containing the names of subkeys.
      */
     protected $subKeyNames;
 
     /**
      * Creates a new registry key iterator.
      *
-     * @param RegistryHandle $handle
-     * The WMI registry provider handle to use.
-     *
-     * @param int $hive
-     * The registry hive the key is located in.
-     *
-     * @param string $name
-     * The fully-qualified name of the key.
+     * @param RegistryHandle $handle The WMI registry provider handle to use.
+     * @param int            $hive   The registry hive the key is located in.
+     * @param string         $name   The fully-qualified name of the key.
      */
     public function __construct(RegistryHandle $handle, $hive, $name)
     {
@@ -79,7 +68,8 @@ class RegistryKeyIterator implements \RecursiveIterator
 
     /**
      * Returns if a subkey iterator can be created for the current key.
-     * @return boolean
+     *
+     * @return bool
      */
     public function hasChildren()
     {
@@ -90,6 +80,7 @@ class RegistryKeyIterator implements \RecursiveIterator
 
     /**
      * Gets an iterator for subkeys of the current registry key.
+     *
      * @return RegistryKeyIterator
      */
     public function getChildren()
@@ -121,7 +112,8 @@ class RegistryKeyIterator implements \RecursiveIterator
 
     /**
      * Checks if the current iteration position is valid.
-     * @return boolean
+     *
+     * @return bool
      */
     public function valid()
     {
@@ -130,6 +122,7 @@ class RegistryKeyIterator implements \RecursiveIterator
 
     /**
      * Gets the registry key at the current iteration position.
+     *
      * @return RegistryKey
      */
     public function current()
@@ -139,6 +132,7 @@ class RegistryKeyIterator implements \RecursiveIterator
 
     /**
      * Gets the name of the registry key at the current iteration position.
+     *
      * @return string
      */
     public function key()

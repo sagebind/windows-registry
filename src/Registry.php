@@ -32,15 +32,10 @@ final class Registry
     /**
      * Connects to a registry and returns a registry instance.
      *
-     * @param string $host
-     * The host name or IP address of the computer whose registry to connect
-     * to. Defaults to the local computer.
-     *
-     * @param string $username
-     * The user name to use to access the registry.
-     *
-     * @param string $password
-     * The password to use to access the registry.
+     * @param string $host     The host name or IP address of the computer whose registry to connect
+     *                         to. Defaults to the local computer.
+     * @param string $username The user name to use to access the registry.
+     * @param string $password The password to use to access the registry.
      *
      * @return Registry
      */
@@ -57,16 +52,14 @@ final class Registry
     }
 
     /**
-     * An open registry handle.
-     * @type RegistryHandle
+     * @var RegistryHandle An open registry handle.
      */
     protected $handle;
 
     /**
      * Creates a new registry connection object.
      *
-     * @param RegistryHandle $handle
-     * The WMI registry provider handle to use.
+     * @param RegistryHandle $handle The WMI registry provider handle to use.
      */
     public function __construct(RegistryHandle $handle)
     {
@@ -75,6 +68,7 @@ final class Registry
 
     /**
      * Gets the underlying handle object used to access the registry.
+     *
      * @return RegistryHandle
      */
     public function getHandle()
@@ -84,46 +78,51 @@ final class Registry
 
     /**
      * Gets the base registry key for the hive CLASSES_ROOT.
+     *
      * @return RegistryKey
      */
     public function getClassesRoot()
     {
-        return new RegistryKey($this->handle, Registry::HKEY_CLASSES_ROOT, '');
+        return new RegistryKey($this->handle, self::HKEY_CLASSES_ROOT, '');
     }
 
     /**
      * Gets the base registry key for the hive CURRENT_CONFIG.
+     *
      * @return RegistryKey
      */
     public function getCurrentConfig()
     {
-        return new RegistryKey($this->handle, Registry::HKEY_CURRENT_CONFIG, '');
+        return new RegistryKey($this->handle, self::HKEY_CURRENT_CONFIG, '');
     }
 
     /**
      * Gets the base registry key for the hive CURRENT_USER.
+     *
      * @return RegistryKey
      */
     public function getCurrentUser()
     {
-        return new RegistryKey($this->handle, Registry::HKEY_CURRENT_USER, '');
+        return new RegistryKey($this->handle, self::HKEY_CURRENT_USER, '');
     }
 
     /**
      * Gets the base registry key for the hive LOCAL_MACHINE.
+     *
      * @return RegistryKey
      */
     public function getLocalMachine()
     {
-        return new RegistryKey($this->handle, Registry::HKEY_LOCAL_MACHINE, '');
+        return new RegistryKey($this->handle, self::HKEY_LOCAL_MACHINE, '');
     }
 
     /**
      * Gets the base registry key for the hive USERS.
+     *
      * @return RegistryKey
      */
     public function getUsers()
     {
-        return new RegistryKey($this->handle, Registry::HKEY_USERS, '');
+        return new RegistryKey($this->handle, self::HKEY_USERS, '');
     }
 }

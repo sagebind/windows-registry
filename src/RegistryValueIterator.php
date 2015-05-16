@@ -23,44 +23,32 @@ namespace Windows\Registry;
 class RegistryValueIterator implements \Iterator
 {
     /**
-     * An open registry handle.
-     *
-     * @var RegistryHandle
+     * @var RegistryHandle An open registry handle.
      */
     protected $handle;
 
     /**
-     * The registry key whose values are being iterated over.
-     *
-     * @var RegistryKey
+     * @var RegistryKey The registry key whose values are being iterated over.
      */
     protected $registryKey;
 
     /**
-     * The current iterator position.
-     *
-     * @var int
+     * @var int The current iterator position.
      */
     protected $pointer = 0;
 
     /**
-     * The number of values we are iterating over.
-     *
-     * @var int
+     * @var int The number of values we are iterating over.
      */
     protected $count = 0;
 
     /**
-     * A (hopefully) enumerable variant containing the value names.
-     *
-     * @var \VARIANT
+     * @var \VARIANT A (hopefully) enumerable variant containing the value names.
      */
     protected $valueNames;
 
     /**
-     * A (hopefully) enumerable variant containing the data types of values.
-     *
-     * @var \VARIANT
+     * @var \VARIANT A (hopefully) enumerable variant containing the data types of values.
      */
     protected $valueTypes;
 
