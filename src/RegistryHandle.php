@@ -22,26 +22,26 @@ namespace Windows\Registry;
  *
  * @see http://msdn.microsoft.com/en-us/library/aa393664.aspx
  *
- * @method \VARIANT checkAccess(int $hDefKey, string $sSubKeyName, int $uRequired, bool $bGranted)                  Verifies that the user has the specified access permissions.
- * @method \VARIANT createKey(int $hDefKey, string $sSubKeyName)                                                    Creates a subkey.
- * @method \VARIANT deleteKey(int $hDefKey, string $sSubKeyName)                                                    Deletes a subkey.
- * @method \VARIANT deleteValue(int $hDefKey, string $sSubKeyName, string $sValueName)                              Deletes a named value.
- * @method \VARIANT enumKey(int $hDefKey, string $sSubKeyName, \VARIANT $sNames)                                    Enumerates subkeys.
- * @method \VARIANT enumValues(int $hDefKey, string $sSubKeyName, \VARIANT $sNames, \VARIANT $Types)                Enumerates the named values of a key.
- * @method \VARIANT getBinaryValue(int $hDefKey, string $sSubKeyName, string $sValueName, \VARIANT $uValue)         Gets the binary data value of a named value.
- * @method \VARIANT getDWORDValue(int $hDefKey, string $sSubKeyName, string $sValueName, \VARIANT $uValue)          Gets the DWORD data value of a named value.
- * @method \VARIANT getExpandedStringValue(int $hDefKey, string $sSubKeyName, string $sValueName, \VARIANT $uValue) Gets the expanded string data value of a named value.
- * @method \VARIANT getMultiStringValue(int $hDefKey, string $sSubKeyName, string $sValueName, \VARIANT $uValue)    Gets the multiple string data values of a named value.
- * @method \VARIANT getQWORDValue(int $hDefKey, string $sSubKeyName, string $sValueName, \VARIANT $uValue)          Gets the QWORD data values of a named value.
- * @method \VARIANT getSecurityDescriptor(int $hDefKey, string $sSubKeyName, \VARIANT $Descriptor)                  Gets the security descriptor for a key.
- * @method \VARIANT getStringValue(int $hDefKey, string $sSubKeyName, string $sValueName, \VARIANT $uValue)         Gets the string data value of a named value.
- * @method \VARIANT setBinaryValue(int $hDefKey, string $sSubKeyName, string $sValueName, \VARIANT $uValue)         Sets the binary data value of a named value.
- * @method \VARIANT setDWORDValue(int $hDefKey, string $sSubKeyName, string $sValueName, \VARIANT $uValue)          Sets the DWORD data value of a named value.
- * @method \VARIANT setExpandedStringValue(int $hDefKey, string $sSubKeyName, string $sValueName, \VARIANT $uValue) Sets the expanded string data value of a named value.
- * @method \VARIANT setMultiStringValue(int $hDefKey, string $sSubKeyName, string $sValueName, \VARIANT $uValue)    Sets the multiple string values of a named value.
- * @method \VARIANT setQWORDValue(int $hDefKey, string $sSubKeyName, string $sValueName, \VARIANT $uValue)          Sets the QWORD data values of a named value.
- * @method \VARIANT setSecurityDescriptor(int $hDefKey, string $sSubKeyName, \VARIANT $Descriptor)                  Sets the security descriptor for a key.
- * @method \VARIANT setStringValue(int $hDefKey, string $sSubKeyName, string $sValueName, \VARIANT $uValue)         Sets the string value of a named value.
+ * @method \VARIANT checkAccess(int $hDefKey, string $sSubKeyName, int $uRequired, bool &$bGranted)                  Verifies that the user has the specified access permissions.
+ * @method \VARIANT createKey(int $hDefKey, string $sSubKeyName)                                                     Creates a subkey.
+ * @method \VARIANT deleteKey(int $hDefKey, string $sSubKeyName)                                                     Deletes a subkey.
+ * @method \VARIANT deleteValue(int $hDefKey, string $sSubKeyName, string $sValueName)                               Deletes a named value.
+ * @method \VARIANT enumKey(int $hDefKey, string $sSubKeyName, \VARIANT &$sNames)                                    Enumerates subkeys.
+ * @method \VARIANT enumValues(int $hDefKey, string $sSubKeyName, \VARIANT &$sNames, \VARIANT &$Types)               Enumerates the named values of a key.
+ * @method \VARIANT getBinaryValue(int $hDefKey, string $sSubKeyName, string $sValueName, \VARIANT &$uValue)         Gets the binary data value of a named value.
+ * @method \VARIANT getDWORDValue(int $hDefKey, string $sSubKeyName, string $sValueName, \VARIANT &$uValue)          Gets the DWORD data value of a named value.
+ * @method \VARIANT getExpandedStringValue(int $hDefKey, string $sSubKeyName, string $sValueName, \VARIANT &$uValue) Gets the expanded string data value of a named value.
+ * @method \VARIANT getMultiStringValue(int $hDefKey, string $sSubKeyName, string $sValueName, \VARIANT &$uValue)    Gets the multiple string data values of a named value.
+ * @method \VARIANT getQWORDValue(int $hDefKey, string $sSubKeyName, string $sValueName, \VARIANT &$uValue)          Gets the QWORD data values of a named value.
+ * @method \VARIANT getSecurityDescriptor(int $hDefKey, string $sSubKeyName, \VARIANT &$Descriptor)                  Gets the security descriptor for a key.
+ * @method \VARIANT getStringValue(int $hDefKey, string $sSubKeyName, string $sValueName, \VARIANT &$uValue)         Gets the string data value of a named value.
+ * @method \VARIANT setBinaryValue(int $hDefKey, string $sSubKeyName, string $sValueName, \VARIANT $uValue)          Sets the binary data value of a named value.
+ * @method \VARIANT setDWORDValue(int $hDefKey, string $sSubKeyName, string $sValueName, \VARIANT $uValue)           Sets the DWORD data value of a named value.
+ * @method \VARIANT setExpandedStringValue(int $hDefKey, string $sSubKeyName, string $sValueName, \VARIANT $uValue)  Sets the expanded string data value of a named value.
+ * @method \VARIANT setMultiStringValue(int $hDefKey, string $sSubKeyName, string $sValueName, \VARIANT $uValue)     Sets the multiple string values of a named value.
+ * @method \VARIANT setQWORDValue(int $hDefKey, string $sSubKeyName, string $sValueName, \VARIANT $uValue)           Sets the QWORD data values of a named value.
+ * @method \VARIANT setSecurityDescriptor(int $hDefKey, string $sSubKeyName, \VARIANT $Descriptor)                   Sets the security descriptor for a key.
+ * @method \VARIANT setStringValue(int $hDefKey, string $sSubKeyName, string $sValueName, \VARIANT $uValue)          Sets the string value of a named value.
  */
 class RegistryHandle
 {
