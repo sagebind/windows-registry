@@ -1,2 +1,8 @@
-# ensure lf line ending for php files
-*.php text eol=lf
+# Set the default behavior
+* text=auto
+
+# Don't export junk to production
+/tests export-ignore
+/.gitattributes export-ignore
+/.gitignore export-ignore
+/phpunit.xml.dist export-ignore
