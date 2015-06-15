@@ -27,6 +27,9 @@ Use [Composer](http://getcomposer.org):
 > composer require coderstephen/windows-registry:~0.9
 ```
 
+## Documentation
+Full API documentation is available online [here](http://coderstephen.github.io/windows-registry/api).
+
 ## Examples
 Below is an example of creating a new registry key with some values and then
 deleting them.
