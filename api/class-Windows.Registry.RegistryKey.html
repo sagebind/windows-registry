@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class Windows\Registry\RegistryKey</title>
+
+	<link rel="stylesheet" href="resources/bootstrap.min.css?973e37a8502921d56bc02bb55321f45b072b6f71">
+	<link rel="stylesheet" href="resources/style.css?a2b5efb503881470385230f40f9bcc3c94d665e7">
+
+</head>
+
+<body>
+	<nav id="navigation" class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a href="index.html" class="navbar-brand">Overview</a>
+			</div>
+			<div class="collapse navbar-collapse">
+
+                <form id="search" class="navbar-form navbar-left" role="search">
+                    <input type="hidden" name="cx" value="">
+                    <input type="hidden" name="ie" value="UTF-8">
+                    <div class="form-group">
+                        <input type="text" name="q" class="search-query form-control" placeholder="Search">
+					</div>
+				</form>
+
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="namespace-Windows.Registry.html" title="Summary of Windows\Registry"><span>Namespace</span></a>
+					</li>
+					<li class="active">
+<span>Class</span>					</li>
+
+
+
+
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div id="left">
+	<div id="menu">
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+					<li class="active">
+						<a href="namespace-Windows.html">
+							Windows<span></span>
+						</a>
+							<ul>
+					<li class="active">
+						<a href="namespace-Windows.Registry.html">
+							Registry						</a>
+							</li>
+								</ul></li>
+			</ul>
+		</div>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Windows.Registry.Registry.html">Registry</a></li>
+				<li><a href="class-Windows.Registry.RegistryHandle.html">RegistryHandle</a></li>
+				<li class="active"><a href="class-Windows.Registry.RegistryKey.html">RegistryKey</a></li>
+				<li><a href="class-Windows.Registry.RegistryKeyIterator.html">RegistryKeyIterator</a></li>
+				<li><a href="class-Windows.Registry.RegistryValueIterator.html">RegistryValueIterator</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-Windows.Registry.Exception.html">Exception</a></li>
+			</ul>
+
+
+			<h3>Exceptions</h3>
+			<ul>
+				<li><a href="class-Windows.Registry.InvalidTypeException.html">InvalidTypeException</a></li>
+				<li><a href="class-Windows.Registry.KeyNotFoundException.html">KeyNotFoundException</a></li>
+				<li><a href="class-Windows.Registry.OperationFailedException.html">OperationFailedException</a></li>
+				<li><a href="class-Windows.Registry.ValueNotFoundException.html">ValueNotFoundException</a></li>
+			</ul>
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+	<div id="rightInner">
+<div id="content" class="class">
+	<h1>Class RegistryKey</h1>
+
+
+	<div class="description">
+	<p>Represents a single key in the Windows registry.</p>
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="alert alert-info">
+		<b>Final</b><br>
+		
+		<b>Namespace:</b> <a href="namespace-Windows.html">Windows</a>\<a href="namespace-Windows.Registry.html">Registry</a><br>
+		
+
+			<b>Located at</b> <a href="source-class-Windows.Registry.RegistryKey.html#20-398" title="Go to source code">RegistryKey.php</a>
+		<br>
+	</div>
+
+
+
+		<div class="panel panel-default">
+			<div class="panel-heading"><h2>Methods summary</h2></div>
+			<table class="summary table table-bordered table-striped methods" id="methods">
+		<tr data-order="__construct" id="___construct">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#___construct">#</a>
+			<code><a href="source-class-Windows.Registry.RegistryKey.html#47-59" title="Go to source code">__construct</a>( <span><code><a href="class-Windows.Registry.RegistryHandle.html">Windows\Registry\RegistryHandle</a></code> <var>$handle</var></span>, <span>integer <var>$hive</var></span>, <span>string <var>$name</var></span> )</code>
+
+			<div class="description short">
+				<p>Creates a new key value object.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Creates a new key value object.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$handle</var></dt>
+						<dd>An open registry handle.</dd>
+						<dt><var>$hive</var></dt>
+						<dd>The registry hive the key is located in.</dd>
+						<dt><var>$name</var></dt>
+						<dd>The fully-qualified name of the key.</dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getName" id="_getName">
+
+			<td class="attributes"><code>
+				 public 
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getName">#</a>
+			<code><a href="source-class-Windows.Registry.RegistryKey.html#61-72" title="Go to source code">getName</a>( )</code>
+
+			<div class="description short">
+				<p>Gets the local (unqualified) name of the key.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Gets the local (unqualified) name of the key.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						string
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getQualifiedName" id="_getQualifiedName">
+
+			<td class="attributes"><code>
+				 public 
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getQualifiedName">#</a>
+			<code><a href="source-class-Windows.Registry.RegistryKey.html#74-82" title="Go to source code">getQualifiedName</a>( )</code>
+
+			<div class="description short">
+				<p>Gets the fully-qualified name of the key.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Gets the fully-qualified name of the key.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						string
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getHive" id="_getHive">
+
+			<td class="attributes"><code>
+				 public 
+				integer
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getHive">#</a>
+			<code><a href="source-class-Windows.Registry.RegistryKey.html#84-92" title="Go to source code">getHive</a>( )</code>
+
+			<div class="description short">
+				<p>Gets the registry hive the key is located in.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Gets the registry hive the key is located in.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						integer
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getHandle" id="_getHandle">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-Windows.Registry.RegistryHandle.html">Windows\Registry\RegistryHandle</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getHandle">#</a>
+			<code><a href="source-class-Windows.Registry.RegistryKey.html#94-102" title="Go to source code">getHandle</a>( )</code>
+
+			<div class="description short">
+				<p>Gets the underlying handle object used to access the registry.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Gets the underlying handle object used to access the registry.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-Windows.Registry.RegistryHandle.html">Windows\Registry\RegistryHandle</a></code>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getSubKey" id="_getSubKey">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-Windows.Registry.RegistryKey.html">Windows\Registry\RegistryKey</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getSubKey">#</a>
+			<code><a href="source-class-Windows.Registry.RegistryKey.html#104-122" title="Go to source code">getSubKey</a>( <span>string <var>$name</var></span> )</code>
+
+			<div class="description short">
+				<p>Gets a registry subkey with the specified name.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Gets a registry subkey with the specified name.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$name</var></dt>
+						<dd>The name or path of the subkey.</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-Windows.Registry.RegistryKey.html">Windows\Registry\RegistryKey</a></code>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getParentKey" id="_getParentKey">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-Windows.Registry.RegistryKey.html">Windows\Registry\RegistryKey</a></code>|null
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getParentKey">#</a>
+			<code><a href="source-class-Windows.Registry.RegistryKey.html#124-138" title="Go to source code">getParentKey</a>( )</code>
+
+			<div class="description short">
+				<p>Gets the parent registry key of the current subkey, or null if the key
+is a root key.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Gets the parent registry key of the current subkey, or null if the key
+is a root key.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-Windows.Registry.RegistryKey.html">Windows\Registry\RegistryKey</a></code>|null
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="createSubKey" id="_createSubKey">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-Windows.Registry.RegistryKey.html">Windows\Registry\RegistryKey</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_createSubKey">#</a>
+			<code><a href="source-class-Windows.Registry.RegistryKey.html#140-156" title="Go to source code">createSubKey</a>( <span>string <var>$name</var></span> )</code>
+
+			<div class="description short">
+				<p>Creates a new registry subkey.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Creates a new registry subkey.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$name</var></dt>
+						<dd>The name or path of the key relative to the current key.</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-Windows.Registry.RegistryKey.html">Windows\Registry\RegistryKey</a></code>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="deleteSubKey" id="_deleteSubKey">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_deleteSubKey">#</a>
+			<code><a href="source-class-Windows.Registry.RegistryKey.html#158-170" title="Go to source code">deleteSubKey</a>( <span>string <var>$name</var></span> )</code>
+
+			<div class="description short">
+				<p>Deletes a registry subkey.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Deletes a registry subkey.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$name</var></dt>
+						<dd>The name or path of the subkey to delete.</dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getSubKeyIterator" id="_getSubKeyIterator">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-Windows.Registry.RegistryKeyIterator.html">Windows\Registry\RegistryKeyIterator</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getSubKeyIterator">#</a>
+			<code><a href="source-class-Windows.Registry.RegistryKey.html#172-180" title="Go to source code">getSubKeyIterator</a>( )</code>
+
+			<div class="description short">
+				<p>Gets an iterator for iterating over subkeys of this key.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Gets an iterator for iterating over subkeys of this key.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-Windows.Registry.RegistryKeyIterator.html">Windows\Registry\RegistryKeyIterator</a></code>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="valueExists" id="_valueExists">
+
+			<td class="attributes"><code>
+				 public 
+				boolean
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_valueExists">#</a>
+			<code><a href="source-class-Windows.Registry.RegistryKey.html#182-199" title="Go to source code">valueExists</a>( <span>string <var>$name</var></span> )</code>
+
+			<div class="description short">
+				<p>Checks if a named value exists with the given name.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Checks if a named value exists with the given name.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$name</var></dt>
+						<dd>The name of the value to check.</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						boolean<br>True if the value exists, otherwise false.
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getValue" id="_getValue">
+
+			<td class="attributes"><code>
+				 public 
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getValue">#</a>
+			<code><a href="source-class-Windows.Registry.RegistryKey.html#201-293" title="Go to source code">getValue</a>( <span>string <var>$name</var></span>, <span>integer <var>$type</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				<p>Gets the value data of a named key value.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Gets the value data of a named key value.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$name</var></dt>
+						<dd>The name of the value.</dd>
+						<dt><var>$type</var></dt>
+						<dd>The value type of the value.</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed<br>The value data of the value.
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="setValue" id="_setValue">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_setValue">#</a>
+			<code><a href="source-class-Windows.Registry.RegistryKey.html#295-343" title="Go to source code">setValue</a>( <span>string <var>$name</var></span>, <span>mixed <var>$value</var></span>, <span>integer <var>$type</var></span> )</code>
+
+			<div class="description short">
+				<p>Sets the value data of a named key value.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Sets the value data of a named key value.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$name</var></dt>
+						<dd>The name of the value.</dd>
+						<dt><var>$value</var></dt>
+						<dd>The value data of the value.</dd>
+						<dt><var>$type</var></dt>
+						<dd>The value type of the value.</dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="deleteValue" id="_deleteValue">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_deleteValue">#</a>
+			<code><a href="source-class-Windows.Registry.RegistryKey.html#345-362" title="Go to source code">deleteValue</a>( <span>string <var>$name</var></span> )</code>
+
+			<div class="description short">
+				<p>Deletes a named value from the key.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Deletes a named value from the key.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$name</var></dt>
+						<dd>The name of the named value to delete.</dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getValueIterator" id="_getValueIterator">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-Windows.Registry.RegistryValueIterator.html">Windows\Registry\RegistryValueIterator</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getValueIterator">#</a>
+			<code><a href="source-class-Windows.Registry.RegistryKey.html#364-372" title="Go to source code">getValueIterator</a>( )</code>
+
+			<div class="description short">
+				<p>Gets an iterator for iterating over key values.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Gets an iterator for iterating over key values.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-Windows.Registry.RegistryValueIterator.html">Windows\Registry\RegistryValueIterator</a></code>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getValueType" id="_getValueType">
+
+			<td class="attributes"><code>
+				 public 
+				integer
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getValueType">#</a>
+			<code><a href="source-class-Windows.Registry.RegistryKey.html#374-397" title="Go to source code">getValueType</a>( <span>string <var>$name</var></span> )</code>
+
+			<div class="description short">
+				<p>Gets the data type of a given value.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Gets the data type of a given value.</p>
+
+<p>Note that this is a relatively expensive operation, especially for keys
+with lots of values.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$name</var></dt>
+						<dd>The name of the value.</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						integer<br>The type of the value.
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+			</table>
+		</div>
+
+
+
+
+
+
+
+
+		<div class="panel panel-default">
+            <div class="panel-heading"><h2>Constants summary</h2></div>
+			<table class="summary table table-bordered table-striped constants" id="constants">
+			<tr data-order="TYPE_SZ" id="TYPE_SZ">
+
+				<td class="attributes"><code>integer</code></td>
+				<td class="name">
+					<code>
+						<a href="source-class-Windows.Registry.RegistryKey.html#25" title="Go to source code"><b>TYPE_SZ</b></a>
+					</code>
+
+					<div class="description short">
+						
+					</div>
+
+					<div class="description detailed hidden">
+						
+
+					</div>
+				</td>
+				<td class="value">
+					<div>
+						<a href="#TYPE_SZ" class="anchor">#</a>
+						<code><span class="php-num">1</span></code>
+					</div>
+				</td>
+			</tr>
+			<tr data-order="TYPE_EXPAND_SZ" id="TYPE_EXPAND_SZ">
+
+				<td class="attributes"><code>integer</code></td>
+				<td class="name">
+					<code>
+						<a href="source-class-Windows.Registry.RegistryKey.html#26" title="Go to source code"><b>TYPE_EXPAND_SZ</b></a>
+					</code>
+
+					<div class="description short">
+						
+					</div>
+
+					<div class="description detailed hidden">
+						
+
+					</div>
+				</td>
+				<td class="value">
+					<div>
+						<a href="#TYPE_EXPAND_SZ" class="anchor">#</a>
+						<code><span class="php-num">2</span></code>
+					</div>
+				</td>
+			</tr>
+			<tr data-order="TYPE_BINARY" id="TYPE_BINARY">
+
+				<td class="attributes"><code>integer</code></td>
+				<td class="name">
+					<code>
+						<a href="source-class-Windows.Registry.RegistryKey.html#27" title="Go to source code"><b>TYPE_BINARY</b></a>
+					</code>
+
+					<div class="description short">
+						
+					</div>
+
+					<div class="description detailed hidden">
+						
+
+					</div>
+				</td>
+				<td class="value">
+					<div>
+						<a href="#TYPE_BINARY" class="anchor">#</a>
+						<code><span class="php-num">3</span></code>
+					</div>
+				</td>
+			</tr>
+			<tr data-order="TYPE_DWORD" id="TYPE_DWORD">
+
+				<td class="attributes"><code>integer</code></td>
+				<td class="name">
+					<code>
+						<a href="source-class-Windows.Registry.RegistryKey.html#28" title="Go to source code"><b>TYPE_DWORD</b></a>
+					</code>
+
+					<div class="description short">
+						
+					</div>
+
+					<div class="description detailed hidden">
+						
+
+					</div>
+				</td>
+				<td class="value">
+					<div>
+						<a href="#TYPE_DWORD" class="anchor">#</a>
+						<code><span class="php-num">4</span></code>
+					</div>
+				</td>
+			</tr>
+			<tr data-order="TYPE_MULTI_SZ" id="TYPE_MULTI_SZ">
+
+				<td class="attributes"><code>integer</code></td>
+				<td class="name">
+					<code>
+						<a href="source-class-Windows.Registry.RegistryKey.html#29" title="Go to source code"><b>TYPE_MULTI_SZ</b></a>
+					</code>
+
+					<div class="description short">
+						
+					</div>
+
+					<div class="description detailed hidden">
+						
+
+					</div>
+				</td>
+				<td class="value">
+					<div>
+						<a href="#TYPE_MULTI_SZ" class="anchor">#</a>
+						<code><span class="php-num">7</span></code>
+					</div>
+				</td>
+			</tr>
+			<tr data-order="TYPE_QWORD" id="TYPE_QWORD">
+
+				<td class="attributes"><code>integer</code></td>
+				<td class="name">
+					<code>
+						<a href="source-class-Windows.Registry.RegistryKey.html#30" title="Go to source code"><b>TYPE_QWORD</b></a>
+					</code>
+
+					<div class="description short">
+						
+					</div>
+
+					<div class="description detailed hidden">
+						
+
+					</div>
+				</td>
+				<td class="value">
+					<div>
+						<a href="#TYPE_QWORD" class="anchor">#</a>
+						<code><span class="php-num">11</span></code>
+					</div>
+				</td>
+			</tr>
+			</table>
+		</div>
+
+
+
+
+		<div class="panel panel-default">
+            <div class="panel-heading"><h2>Properties summary</h2></div>
+			<table class="summary table table-bordered table-striped properties" id="properties">
+		<tr data-order="handle" id="$handle">
+			<td class="attributes"><code>
+				protected  
+				<code><a href="class-Windows.Registry.RegistryHandle.html">Windows\Registry\RegistryHandle</a></code>
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Windows.Registry.RegistryKey.html#32-35" title="Go to source code"><var>$handle</var></a>
+
+				<div class="description short">
+					<p>An open registry handle.</p>
+				</div>
+
+				<div class="description detailed hidden">
+					<p>An open registry handle.</p>
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$handle" class="anchor">#</a>
+					<code></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="hive" id="$hive">
+			<td class="attributes"><code>
+				protected  
+				integer
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Windows.Registry.RegistryKey.html#37-40" title="Go to source code"><var>$hive</var></a>
+
+				<div class="description short">
+					<p>The registry hive the key is located in.</p>
+				</div>
+
+				<div class="description detailed hidden">
+					<p>The registry hive the key is located in.</p>
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$hive" class="anchor">#</a>
+					<code></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="name" id="$name">
+			<td class="attributes"><code>
+				protected  
+				string
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Windows.Registry.RegistryKey.html#42-45" title="Go to source code"><var>$name</var></a>
+
+				<div class="description short">
+					<p>Fully-qualified name of the key.</p>
+				</div>
+
+				<div class="description detailed hidden">
+					<p>Fully-qualified name of the key.</p>
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$name" class="anchor">#</a>
+					<code></code>
+				</div>
+			</td>
+		</tr>
+			</table>
+		</div>
+
+
+
+
+
+
+</div>
+	</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>

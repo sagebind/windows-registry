@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class Windows\Registry\RegistryHandle</title>
+
+	<link rel="stylesheet" href="resources/bootstrap.min.css?973e37a8502921d56bc02bb55321f45b072b6f71">
+	<link rel="stylesheet" href="resources/style.css?a2b5efb503881470385230f40f9bcc3c94d665e7">
+
+</head>
+
+<body>
+	<nav id="navigation" class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a href="index.html" class="navbar-brand">Overview</a>
+			</div>
+			<div class="collapse navbar-collapse">
+
+                <form id="search" class="navbar-form navbar-left" role="search">
+                    <input type="hidden" name="cx" value="">
+                    <input type="hidden" name="ie" value="UTF-8">
+                    <div class="form-group">
+                        <input type="text" name="q" class="search-query form-control" placeholder="Search">
+					</div>
+				</form>
+
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="namespace-Windows.Registry.html" title="Summary of Windows\Registry"><span>Namespace</span></a>
+					</li>
+					<li class="active">
+<span>Class</span>					</li>
+
+
+
+
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div id="left">
+	<div id="menu">
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+					<li class="active">
+						<a href="namespace-Windows.html">
+							Windows<span></span>
+						</a>
+							<ul>
+					<li class="active">
+						<a href="namespace-Windows.Registry.html">
+							Registry						</a>
+							</li>
+								</ul></li>
+			</ul>
+		</div>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Windows.Registry.Registry.html">Registry</a></li>
+				<li class="active"><a href="class-Windows.Registry.RegistryHandle.html">RegistryHandle</a></li>
+				<li><a href="class-Windows.Registry.RegistryKey.html">RegistryKey</a></li>
+				<li><a href="class-Windows.Registry.RegistryKeyIterator.html">RegistryKeyIterator</a></li>
+				<li><a href="class-Windows.Registry.RegistryValueIterator.html">RegistryValueIterator</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-Windows.Registry.Exception.html">Exception</a></li>
+			</ul>
+
+
+			<h3>Exceptions</h3>
+			<ul>
+				<li><a href="class-Windows.Registry.InvalidTypeException.html">InvalidTypeException</a></li>
+				<li><a href="class-Windows.Registry.KeyNotFoundException.html">KeyNotFoundException</a></li>
+				<li><a href="class-Windows.Registry.OperationFailedException.html">OperationFailedException</a></li>
+				<li><a href="class-Windows.Registry.ValueNotFoundException.html">ValueNotFoundException</a></li>
+			</ul>
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+	<div id="rightInner">
+<div id="content" class="class">
+	<h1>Class RegistryHandle</h1>
+
+
+	<div class="description">
+	<p>A wrapper around the Microsoft Windows StdRegProv WMI class.</p>
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="alert alert-info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Windows.html">Windows</a>\<a href="namespace-Windows.Registry.html">Registry</a><br>
+		
+
+				<b>See:</b>
+				http://msdn.microsoft.com/en-us/library/aa393664.aspx<br>
+			<b>Located at</b> <a href="source-class-Windows.Registry.RegistryHandle.html#20-80" title="Go to source code">RegistryHandle.php</a>
+		<br>
+	</div>
+
+
+
+		<div class="panel panel-default">
+			<div class="panel-heading"><h2>Methods summary</h2></div>
+			<table class="summary table table-bordered table-striped methods" id="methods">
+		<tr data-order="__construct" id="___construct">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#___construct">#</a>
+			<code><a href="source-class-Windows.Registry.RegistryHandle.html#53-61" title="Go to source code">__construct</a>( <span>VARIANT <var>$stdRegProv</var></span> )</code>
+
+			<div class="description short">
+				<p>Creates a new wrapper for an StdRegProv instance.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Creates a new wrapper for an StdRegProv instance.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$stdRegProv</var></dt>
+						<dd>The StdRegProv instance to wrap.</dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="__call" id="___call">
+
+			<td class="attributes"><code>
+				 public 
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#___call">#</a>
+			<code><a href="source-class-Windows.Registry.RegistryHandle.html#63-79" title="Go to source code">__call</a>( <span>string <var>$name</var></span>, <span>array <var>$args</var></span> )</code>
+
+			<div class="description short">
+				<p>Calls a dynamic method of the StdRegProv instance.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Calls a dynamic method of the StdRegProv instance.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$name</var></dt>
+						<dd>The name of the method to call.</dd>
+						<dt><var>$args</var></dt>
+						<dd>$args An array of arguments to pass to the method.</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed<br>The return value of the method call.
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+			</table>
+		</div>
+
+
+
+		<div class="panel panel-default">
+	        <div class="panel-heading"><h3>Magic methods summary</h3></div>
+			<table class="summary table table-bordered table-striped methods" id="magicMethods">
+		<tr data-order="checkAccess" id="m_checkAccess">
+
+			<td class="attributes"><code>
+				 public 
+				integer
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#m_checkAccess">#</a>
+			<code><a href="source-class-Windows.Registry.RegistryHandle.html#25" title="Go to source code">checkAccess</a>( <span>integer <var>$hDefKey</var></span>, <span>string <var>$sSubKeyName</var></span>, <span>integer <var>$uRequired</var></span>, <span>boolean <var>&amp; $bGranted</var></span> )</code>
+
+			<div class="description short">
+				<p>Verifies that the user has the specified access permissions.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Verifies that the user has the specified access permissions.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$hDefKey</var></dt>
+						<dd></dd>
+						<dt><var>$sSubKeyName</var></dt>
+						<dd></dd>
+						<dt><var>$uRequired</var></dt>
+						<dd></dd>
+						<dt><var>$bGranted</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						integer
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="createKey" id="m_createKey">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#m_createKey">#</a>
+			<code><a href="source-class-Windows.Registry.RegistryHandle.html#26" title="Go to source code">createKey</a>( <span>integer <var>$hDefKey</var></span>, <span>string <var>$sSubKeyName</var></span> )</code>
+
+			<div class="description short">
+				<p>Creates a subkey.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Creates a subkey.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$hDefKey</var></dt>
+						<dd></dd>
+						<dt><var>$sSubKeyName</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="deleteKey" id="m_deleteKey">
+
+			<td class="attributes"><code>
+				 public 
+				integer
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#m_deleteKey">#</a>
+			<code><a href="source-class-Windows.Registry.RegistryHandle.html#27" title="Go to source code">deleteKey</a>( <span>integer <var>$hDefKey</var></span>, <span>string <var>$sSubKeyName</var></span> )</code>
+
+			<div class="description short">
+				<p>Deletes a subkey.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Deletes a subkey.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$hDefKey</var></dt>
+						<dd></dd>
+						<dt><var>$sSubKeyName</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						integer
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="deleteValue" id="m_deleteValue">
+
+			<td class="attributes"><code>
+				 public 
+				integer
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#m_deleteValue">#</a>
+			<code><a href="source-class-Windows.Registry.RegistryHandle.html#28" title="Go to source code">deleteValue</a>( <span>integer <var>$hDefKey</var></span>, <span>string <var>$sSubKeyName</var></span>, <span>string <var>$sValueName</var></span> )</code>
+
+			<div class="description short">
+				<p>Deletes a named value.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Deletes a named value.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$hDefKey</var></dt>
+						<dd></dd>
+						<dt><var>$sSubKeyName</var></dt>
+						<dd></dd>
+						<dt><var>$sValueName</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						integer
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="enumKey" id="m_enumKey">
+
+			<td class="attributes"><code>
+				 public 
+				integer
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#m_enumKey">#</a>
+			<code><a href="source-class-Windows.Registry.RegistryHandle.html#29" title="Go to source code">enumKey</a>( <span>integer <var>$hDefKey</var></span>, <span>string <var>$sSubKeyName</var></span>, <span>VARIANT <var>&amp; $sNames</var></span> )</code>
+
+			<div class="description short">
+				<p>Enumerates subkeys.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Enumerates subkeys.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$hDefKey</var></dt>
+						<dd></dd>
+						<dt><var>$sSubKeyName</var></dt>
+						<dd></dd>
+						<dt><var>$sNames</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						integer
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="enumValues" id="m_enumValues">
+
+			<td class="attributes"><code>
+				 public 
+				integer
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#m_enumValues">#</a>
+			<code><a href="source-class-Windows.Registry.RegistryHandle.html#30" title="Go to source code">enumValues</a>( <span>integer <var>$hDefKey</var></span>, <span>string <var>$sSubKeyName</var></span>, <span>VARIANT <var>&amp; $sNames</var></span>, <span>VARIANT <var>&amp; $Types</var></span> )</code>
+
+			<div class="description short">
+				<p>Enumerates the named values of a key.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Enumerates the named values of a key.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$hDefKey</var></dt>
+						<dd></dd>
+						<dt><var>$sSubKeyName</var></dt>
+						<dd></dd>
+						<dt><var>$sNames</var></dt>
+						<dd></dd>
+						<dt><var>$Types</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						integer
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getBinaryValue" id="m_getBinaryValue">
+
+			<td class="attributes"><code>
+				 public 
+				integer
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#m_getBinaryValue">#</a>
+			<code><a href="source-class-Windows.Registry.RegistryHandle.html#31" title="Go to source code">getBinaryValue</a>( <span>integer <var>$hDefKey</var></span>, <span>string <var>$sSubKeyName</var></span>, <span>string <var>$sValueName</var></span>, <span>VARIANT <var>&amp; $uValue</var></span> )</code>
+
+			<div class="description short">
+				<p>Gets the binary data value of a named value.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Gets the binary data value of a named value.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$hDefKey</var></dt>
+						<dd></dd>
+						<dt><var>$sSubKeyName</var></dt>
+						<dd></dd>
+						<dt><var>$sValueName</var></dt>
+						<dd></dd>
+						<dt><var>$uValue</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						integer
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getDWORDValue" id="m_getDWORDValue">
+
+			<td class="attributes"><code>
+				 public 
+				integer
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#m_getDWORDValue">#</a>
+			<code><a href="source-class-Windows.Registry.RegistryHandle.html#32" title="Go to source code">getDWORDValue</a>( <span>integer <var>$hDefKey</var></span>, <span>string <var>$sSubKeyName</var></span>, <span>string <var>$sValueName</var></span>, <span>VARIANT <var>&amp; $uValue</var></span> )</code>
+
+			<div class="description short">
+				<p>Gets the DWORD data value of a named value.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Gets the DWORD data value of a named value.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$hDefKey</var></dt>
+						<dd></dd>
+						<dt><var>$sSubKeyName</var></dt>
+						<dd></dd>
+						<dt><var>$sValueName</var></dt>
+						<dd></dd>
+						<dt><var>$uValue</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						integer
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getExpandedStringValue" id="m_getExpandedStringValue">
+
+			<td class="attributes"><code>
+				 public 
+				integer
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#m_getExpandedStringValue">#</a>
+			<code><a href="source-class-Windows.Registry.RegistryHandle.html#33" title="Go to source code">getExpandedStringValue</a>( <span>integer <var>$hDefKey</var></span>, <span>string <var>$sSubKeyName</var></span>, <span>string <var>$sValueName</var></span>, <span>VARIANT <var>&amp; $uValue</var></span> )</code>
+
+			<div class="description short">
+				<p>Gets the expanded string data value of a named value.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Gets the expanded string data value of a named value.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$hDefKey</var></dt>
+						<dd></dd>
+						<dt><var>$sSubKeyName</var></dt>
+						<dd></dd>
+						<dt><var>$sValueName</var></dt>
+						<dd></dd>
+						<dt><var>$uValue</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						integer
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getMultiStringValue" id="m_getMultiStringValue">
+
+			<td class="attributes"><code>
+				 public 
+				integer
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#m_getMultiStringValue">#</a>
+			<code><a href="source-class-Windows.Registry.RegistryHandle.html#34" title="Go to source code">getMultiStringValue</a>( <span>integer <var>$hDefKey</var></span>, <span>string <var>$sSubKeyName</var></span>, <span>string <var>$sValueName</var></span>, <span>VARIANT <var>&amp; $uValue</var></span> )</code>
+
+			<div class="description short">
+				<p>Gets the multiple string data values of a named value.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Gets the multiple string data values of a named value.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$hDefKey</var></dt>
+						<dd></dd>
+						<dt><var>$sSubKeyName</var></dt>
+						<dd></dd>
+						<dt><var>$sValueName</var></dt>
+						<dd></dd>
+						<dt><var>$uValue</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						integer
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getQWORDValue" id="m_getQWORDValue">
+
+			<td class="attributes"><code>
+				 public 
+				integer
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#m_getQWORDValue">#</a>
+			<code><a href="source-class-Windows.Registry.RegistryHandle.html#35" title="Go to source code">getQWORDValue</a>( <span>integer <var>$hDefKey</var></span>, <span>string <var>$sSubKeyName</var></span>, <span>string <var>$sValueName</var></span>, <span>VARIANT <var>&amp; $uValue</var></span> )</code>
+
+			<div class="description short">
+				<p>Gets the QWORD data values of a named value.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Gets the QWORD data values of a named value.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$hDefKey</var></dt>
+						<dd></dd>
+						<dt><var>$sSubKeyName</var></dt>
+						<dd></dd>
+						<dt><var>$sValueName</var></dt>
+						<dd></dd>
+						<dt><var>$uValue</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						integer
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getSecurityDescriptor" id="m_getSecurityDescriptor">
+
+			<td class="attributes"><code>
+				 public 
+				integer
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#m_getSecurityDescriptor">#</a>
+			<code><a href="source-class-Windows.Registry.RegistryHandle.html#36" title="Go to source code">getSecurityDescriptor</a>( <span>integer <var>$hDefKey</var></span>, <span>string <var>$sSubKeyName</var></span>, <span>VARIANT <var>&amp; $Descriptor</var></span> )</code>
+
+			<div class="description short">
+				<p>Gets the security descriptor for a key.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Gets the security descriptor for a key.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$hDefKey</var></dt>
+						<dd></dd>
+						<dt><var>$sSubKeyName</var></dt>
+						<dd></dd>
+						<dt><var>$Descriptor</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						integer
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getStringValue" id="m_getStringValue">
+
+			<td class="attributes"><code>
+				 public 
+				integer
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#m_getStringValue">#</a>
+			<code><a href="source-class-Windows.Registry.RegistryHandle.html#37" title="Go to source code">getStringValue</a>( <span>integer <var>$hDefKey</var></span>, <span>string <var>$sSubKeyName</var></span>, <span>string <var>$sValueName</var></span>, <span>VARIANT <var>&amp; $uValue</var></span> )</code>
+
+			<div class="description short">
+				<p>Gets the string data value of a named value.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Gets the string data value of a named value.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$hDefKey</var></dt>
+						<dd></dd>
+						<dt><var>$sSubKeyName</var></dt>
+						<dd></dd>
+						<dt><var>$sValueName</var></dt>
+						<dd></dd>
+						<dt><var>$uValue</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						integer
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="setBinaryValue" id="m_setBinaryValue">
+
+			<td class="attributes"><code>
+				 public 
+				integer
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#m_setBinaryValue">#</a>
+			<code><a href="source-class-Windows.Registry.RegistryHandle.html#38" title="Go to source code">setBinaryValue</a>( <span>integer <var>$hDefKey</var></span>, <span>string <var>$sSubKeyName</var></span>, <span>string <var>$sValueName</var></span>, <span>VARIANT <var>$uValue</var></span> )</code>
+
+			<div class="description short">
+				<p>Sets the binary data value of a named value.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Sets the binary data value of a named value.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$hDefKey</var></dt>
+						<dd></dd>
+						<dt><var>$sSubKeyName</var></dt>
+						<dd></dd>
+						<dt><var>$sValueName</var></dt>
+						<dd></dd>
+						<dt><var>$uValue</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						integer
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="setDWORDValue" id="m_setDWORDValue">
+
+			<td class="attributes"><code>
+				 public 
+				integer
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#m_setDWORDValue">#</a>
+			<code><a href="source-class-Windows.Registry.RegistryHandle.html#39" title="Go to source code">setDWORDValue</a>( <span>integer <var>$hDefKey</var></span>, <span>string <var>$sSubKeyName</var></span>, <span>string <var>$sValueName</var></span>, <span>VARIANT <var>$uValue</var></span> )</code>
+
+			<div class="description short">
+				<p>Sets the DWORD data value of a named value.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Sets the DWORD data value of a named value.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$hDefKey</var></dt>
+						<dd></dd>
+						<dt><var>$sSubKeyName</var></dt>
+						<dd></dd>
+						<dt><var>$sValueName</var></dt>
+						<dd></dd>
+						<dt><var>$uValue</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						integer
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="setExpandedStringValue" id="m_setExpandedStringValue">
+
+			<td class="attributes"><code>
+				 public 
+				integer
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#m_setExpandedStringValue">#</a>
+			<code><a href="source-class-Windows.Registry.RegistryHandle.html#40" title="Go to source code">setExpandedStringValue</a>( <span>integer <var>$hDefKey</var></span>, <span>string <var>$sSubKeyName</var></span>, <span>string <var>$sValueName</var></span>, <span>VARIANT <var>$uValue</var></span> )</code>
+
+			<div class="description short">
+				<p>Sets the expanded string data value of a named value.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Sets the expanded string data value of a named value.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$hDefKey</var></dt>
+						<dd></dd>
+						<dt><var>$sSubKeyName</var></dt>
+						<dd></dd>
+						<dt><var>$sValueName</var></dt>
+						<dd></dd>
+						<dt><var>$uValue</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						integer
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="setMultiStringValue" id="m_setMultiStringValue">
+
+			<td class="attributes"><code>
+				 public 
+				integer
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#m_setMultiStringValue">#</a>
+			<code><a href="source-class-Windows.Registry.RegistryHandle.html#41" title="Go to source code">setMultiStringValue</a>( <span>integer <var>$hDefKey</var></span>, <span>string <var>$sSubKeyName</var></span>, <span>string <var>$sValueName</var></span>, <span>VARIANT <var>$uValue</var></span> )</code>
+
+			<div class="description short">
+				<p>Sets the multiple string values of a named value.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Sets the multiple string values of a named value.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$hDefKey</var></dt>
+						<dd></dd>
+						<dt><var>$sSubKeyName</var></dt>
+						<dd></dd>
+						<dt><var>$sValueName</var></dt>
+						<dd></dd>
+						<dt><var>$uValue</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						integer
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="setQWORDValue" id="m_setQWORDValue">
+
+			<td class="attributes"><code>
+				 public 
+				integer
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#m_setQWORDValue">#</a>
+			<code><a href="source-class-Windows.Registry.RegistryHandle.html#42" title="Go to source code">setQWORDValue</a>( <span>integer <var>$hDefKey</var></span>, <span>string <var>$sSubKeyName</var></span>, <span>string <var>$sValueName</var></span>, <span>VARIANT <var>$uValue</var></span> )</code>
+
+			<div class="description short">
+				<p>Sets the QWORD data values of a named value.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Sets the QWORD data values of a named value.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$hDefKey</var></dt>
+						<dd></dd>
+						<dt><var>$sSubKeyName</var></dt>
+						<dd></dd>
+						<dt><var>$sValueName</var></dt>
+						<dd></dd>
+						<dt><var>$uValue</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						integer
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="setSecurityDescriptor" id="m_setSecurityDescriptor">
+
+			<td class="attributes"><code>
+				 public 
+				integer
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#m_setSecurityDescriptor">#</a>
+			<code><a href="source-class-Windows.Registry.RegistryHandle.html#43" title="Go to source code">setSecurityDescriptor</a>( <span>integer <var>$hDefKey</var></span>, <span>string <var>$sSubKeyName</var></span>, <span>VARIANT <var>$Descriptor</var></span> )</code>
+
+			<div class="description short">
+				<p>Sets the security descriptor for a key.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Sets the security descriptor for a key.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$hDefKey</var></dt>
+						<dd></dd>
+						<dt><var>$sSubKeyName</var></dt>
+						<dd></dd>
+						<dt><var>$Descriptor</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						integer
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="setStringValue" id="m_setStringValue">
+
+			<td class="attributes"><code>
+				 public 
+				integer
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#m_setStringValue">#</a>
+			<code><a href="source-class-Windows.Registry.RegistryHandle.html#44" title="Go to source code">setStringValue</a>( <span>integer <var>$hDefKey</var></span>, <span>string <var>$sSubKeyName</var></span>, <span>string <var>$sValueName</var></span>, <span>VARIANT <var>$uValue</var></span> )</code>
+
+			<div class="description short">
+				<p>Sets the string value of a named value.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Sets the string value of a named value.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$hDefKey</var></dt>
+						<dd></dd>
+						<dt><var>$sSubKeyName</var></dt>
+						<dd></dd>
+						<dt><var>$sValueName</var></dt>
+						<dd></dd>
+						<dt><var>$uValue</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						integer
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+			</table>
+		</div>
+
+
+
+
+
+
+
+
+		<div class="panel panel-default">
+            <div class="panel-heading"><h2>Properties summary</h2></div>
+			<table class="summary table table-bordered table-striped properties" id="properties">
+		<tr data-order="stdRegProv" id="$stdRegProv">
+			<td class="attributes"><code>
+				protected  
+				VARIANT
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Windows.Registry.RegistryHandle.html#48-51" title="Go to source code"><var>$stdRegProv</var></a>
+
+				<div class="description short">
+					<p>An StdRegProv instance.</p>
+				</div>
+
+				<div class="description detailed hidden">
+					<p>An StdRegProv instance.</p>
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$stdRegProv" class="anchor">#</a>
+					<code></code>
+				</div>
+			</td>
+		</tr>
+			</table>
+		</div>
+
+
+
+
+
+
+</div>
+	</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>

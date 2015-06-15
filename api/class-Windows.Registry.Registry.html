@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class Windows\Registry\Registry</title>
+
+	<link rel="stylesheet" href="resources/bootstrap.min.css?973e37a8502921d56bc02bb55321f45b072b6f71">
+	<link rel="stylesheet" href="resources/style.css?a2b5efb503881470385230f40f9bcc3c94d665e7">
+
+</head>
+
+<body>
+	<nav id="navigation" class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a href="index.html" class="navbar-brand">Overview</a>
+			</div>
+			<div class="collapse navbar-collapse">
+
+                <form id="search" class="navbar-form navbar-left" role="search">
+                    <input type="hidden" name="cx" value="">
+                    <input type="hidden" name="ie" value="UTF-8">
+                    <div class="form-group">
+                        <input type="text" name="q" class="search-query form-control" placeholder="Search">
+					</div>
+				</form>
+
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="namespace-Windows.Registry.html" title="Summary of Windows\Registry"><span>Namespace</span></a>
+					</li>
+					<li class="active">
+<span>Class</span>					</li>
+
+
+
+
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div id="left">
+	<div id="menu">
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+					<li class="active">
+						<a href="namespace-Windows.html">
+							Windows<span></span>
+						</a>
+							<ul>
+					<li class="active">
+						<a href="namespace-Windows.Registry.html">
+							Registry						</a>
+							</li>
+								</ul></li>
+			</ul>
+		</div>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-Windows.Registry.Registry.html">Registry</a></li>
+				<li><a href="class-Windows.Registry.RegistryHandle.html">RegistryHandle</a></li>
+				<li><a href="class-Windows.Registry.RegistryKey.html">RegistryKey</a></li>
+				<li><a href="class-Windows.Registry.RegistryKeyIterator.html">RegistryKeyIterator</a></li>
+				<li><a href="class-Windows.Registry.RegistryValueIterator.html">RegistryValueIterator</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-Windows.Registry.Exception.html">Exception</a></li>
+			</ul>
+
+
+			<h3>Exceptions</h3>
+			<ul>
+				<li><a href="class-Windows.Registry.InvalidTypeException.html">InvalidTypeException</a></li>
+				<li><a href="class-Windows.Registry.KeyNotFoundException.html">KeyNotFoundException</a></li>
+				<li><a href="class-Windows.Registry.OperationFailedException.html">OperationFailedException</a></li>
+				<li><a href="class-Windows.Registry.ValueNotFoundException.html">ValueNotFoundException</a></li>
+			</ul>
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+	<div id="rightInner">
+<div id="content" class="class">
+	<h1>Class Registry</h1>
+
+
+	<div class="description">
+	<p>Creates connections to a computer's registry and provides base keys for
+accessing subkeys.</p>
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="alert alert-info">
+		<b>Final</b><br>
+		
+		<b>Namespace:</b> <a href="namespace-Windows.html">Windows</a>\<a href="namespace-Windows.Registry.html">Registry</a><br>
+		
+
+			<b>Located at</b> <a href="source-class-Windows.Registry.Registry.html#20-128" title="Go to source code">Registry.php</a>
+		<br>
+	</div>
+
+
+
+		<div class="panel panel-default">
+			<div class="panel-heading"><h2>Methods summary</h2></div>
+			<table class="summary table table-bordered table-striped methods" id="methods">
+		<tr data-order="connect" id="_connect">
+
+			<td class="attributes"><code>
+				 public static
+				<code><a href="class-Windows.Registry.Registry.html">Windows\Registry\Registry</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_connect">#</a>
+			<code><a href="source-class-Windows.Registry.Registry.html#32-52" title="Go to source code">connect</a>( <span>string <var>$host</var> = <span class="php-quote">'.'</span></span>, <span>string <var>$username</var> = <span class="php-keyword1">null</span></span>, <span>string <var>$password</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				<p>Connects to a registry and returns a registry instance.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Connects to a registry and returns a registry instance.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$host</var></dt>
+						<dd><p>The host name or IP address of the computer whose registry to connect
+                        to. Defaults to the local computer.</p></dd>
+						<dt><var>$username</var></dt>
+						<dd>The user name to use to access the registry.</dd>
+						<dt><var>$password</var></dt>
+						<dd>The password to use to access the registry.</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-Windows.Registry.Registry.html">Windows\Registry\Registry</a></code>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="__construct" id="___construct">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#___construct">#</a>
+			<code><a href="source-class-Windows.Registry.Registry.html#59-67" title="Go to source code">__construct</a>( <span><code><a href="class-Windows.Registry.RegistryHandle.html">Windows\Registry\RegistryHandle</a></code> <var>$handle</var></span> )</code>
+
+			<div class="description short">
+				<p>Creates a new registry connection object.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Creates a new registry connection object.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$handle</var></dt>
+						<dd>The WMI registry provider handle to use.</dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getHandle" id="_getHandle">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-Windows.Registry.RegistryHandle.html">Windows\Registry\RegistryHandle</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getHandle">#</a>
+			<code><a href="source-class-Windows.Registry.Registry.html#69-77" title="Go to source code">getHandle</a>( )</code>
+
+			<div class="description short">
+				<p>Gets the underlying handle object used to access the registry.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Gets the underlying handle object used to access the registry.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-Windows.Registry.RegistryHandle.html">Windows\Registry\RegistryHandle</a></code>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getClassesRoot" id="_getClassesRoot">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-Windows.Registry.RegistryKey.html">Windows\Registry\RegistryKey</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getClassesRoot">#</a>
+			<code><a href="source-class-Windows.Registry.Registry.html#79-87" title="Go to source code">getClassesRoot</a>( )</code>
+
+			<div class="description short">
+				<p>Gets the base registry key for the hive CLASSES_ROOT.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Gets the base registry key for the hive CLASSES_ROOT.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-Windows.Registry.RegistryKey.html">Windows\Registry\RegistryKey</a></code>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getCurrentConfig" id="_getCurrentConfig">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-Windows.Registry.RegistryKey.html">Windows\Registry\RegistryKey</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getCurrentConfig">#</a>
+			<code><a href="source-class-Windows.Registry.Registry.html#89-97" title="Go to source code">getCurrentConfig</a>( )</code>
+
+			<div class="description short">
+				<p>Gets the base registry key for the hive CURRENT_CONFIG.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Gets the base registry key for the hive CURRENT_CONFIG.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-Windows.Registry.RegistryKey.html">Windows\Registry\RegistryKey</a></code>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getCurrentUser" id="_getCurrentUser">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-Windows.Registry.RegistryKey.html">Windows\Registry\RegistryKey</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getCurrentUser">#</a>
+			<code><a href="source-class-Windows.Registry.Registry.html#99-107" title="Go to source code">getCurrentUser</a>( )</code>
+
+			<div class="description short">
+				<p>Gets the base registry key for the hive CURRENT_USER.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Gets the base registry key for the hive CURRENT_USER.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-Windows.Registry.RegistryKey.html">Windows\Registry\RegistryKey</a></code>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getLocalMachine" id="_getLocalMachine">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-Windows.Registry.RegistryKey.html">Windows\Registry\RegistryKey</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getLocalMachine">#</a>
+			<code><a href="source-class-Windows.Registry.Registry.html#109-117" title="Go to source code">getLocalMachine</a>( )</code>
+
+			<div class="description short">
+				<p>Gets the base registry key for the hive LOCAL_MACHINE.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Gets the base registry key for the hive LOCAL_MACHINE.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-Windows.Registry.RegistryKey.html">Windows\Registry\RegistryKey</a></code>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getUsers" id="_getUsers">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-Windows.Registry.RegistryKey.html">Windows\Registry\RegistryKey</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getUsers">#</a>
+			<code><a href="source-class-Windows.Registry.Registry.html#119-127" title="Go to source code">getUsers</a>( )</code>
+
+			<div class="description short">
+				<p>Gets the base registry key for the hive USERS.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Gets the base registry key for the hive USERS.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-Windows.Registry.RegistryKey.html">Windows\Registry\RegistryKey</a></code>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+			</table>
+		</div>
+
+
+
+
+
+
+
+
+		<div class="panel panel-default">
+            <div class="panel-heading"><h2>Constants summary</h2></div>
+			<table class="summary table table-bordered table-striped constants" id="constants">
+			<tr data-order="HKEY_CLASSES_ROOT" id="HKEY_CLASSES_ROOT">
+
+				<td class="attributes"><code>integer</code></td>
+				<td class="name">
+					<code>
+						<a href="source-class-Windows.Registry.Registry.html#26" title="Go to source code"><b>HKEY_CLASSES_ROOT</b></a>
+					</code>
+
+					<div class="description short">
+						
+					</div>
+
+					<div class="description detailed hidden">
+						
+
+					</div>
+				</td>
+				<td class="value">
+					<div>
+						<a href="#HKEY_CLASSES_ROOT" class="anchor">#</a>
+						<code><span class="php-num">0x80000000</span></code>
+					</div>
+				</td>
+			</tr>
+			<tr data-order="HKEY_CURRENT_USER" id="HKEY_CURRENT_USER">
+
+				<td class="attributes"><code>integer</code></td>
+				<td class="name">
+					<code>
+						<a href="source-class-Windows.Registry.Registry.html#27" title="Go to source code"><b>HKEY_CURRENT_USER</b></a>
+					</code>
+
+					<div class="description short">
+						
+					</div>
+
+					<div class="description detailed hidden">
+						
+
+					</div>
+				</td>
+				<td class="value">
+					<div>
+						<a href="#HKEY_CURRENT_USER" class="anchor">#</a>
+						<code><span class="php-num">0x80000001</span></code>
+					</div>
+				</td>
+			</tr>
+			<tr data-order="HKEY_LOCAL_MACHINE" id="HKEY_LOCAL_MACHINE">
+
+				<td class="attributes"><code>integer</code></td>
+				<td class="name">
+					<code>
+						<a href="source-class-Windows.Registry.Registry.html#28" title="Go to source code"><b>HKEY_LOCAL_MACHINE</b></a>
+					</code>
+
+					<div class="description short">
+						
+					</div>
+
+					<div class="description detailed hidden">
+						
+
+					</div>
+				</td>
+				<td class="value">
+					<div>
+						<a href="#HKEY_LOCAL_MACHINE" class="anchor">#</a>
+						<code><span class="php-num">0x80000002</span></code>
+					</div>
+				</td>
+			</tr>
+			<tr data-order="HKEY_USERS" id="HKEY_USERS">
+
+				<td class="attributes"><code>integer</code></td>
+				<td class="name">
+					<code>
+						<a href="source-class-Windows.Registry.Registry.html#29" title="Go to source code"><b>HKEY_USERS</b></a>
+					</code>
+
+					<div class="description short">
+						
+					</div>
+
+					<div class="description detailed hidden">
+						
+
+					</div>
+				</td>
+				<td class="value">
+					<div>
+						<a href="#HKEY_USERS" class="anchor">#</a>
+						<code><span class="php-num">0x80000003</span></code>
+					</div>
+				</td>
+			</tr>
+			<tr data-order="HKEY_CURRENT_CONFIG" id="HKEY_CURRENT_CONFIG">
+
+				<td class="attributes"><code>integer</code></td>
+				<td class="name">
+					<code>
+						<a href="source-class-Windows.Registry.Registry.html#30" title="Go to source code"><b>HKEY_CURRENT_CONFIG</b></a>
+					</code>
+
+					<div class="description short">
+						
+					</div>
+
+					<div class="description detailed hidden">
+						
+
+					</div>
+				</td>
+				<td class="value">
+					<div>
+						<a href="#HKEY_CURRENT_CONFIG" class="anchor">#</a>
+						<code><span class="php-num">0x80000005</span></code>
+					</div>
+				</td>
+			</tr>
+			</table>
+		</div>
+
+
+
+
+		<div class="panel panel-default">
+            <div class="panel-heading"><h2>Properties summary</h2></div>
+			<table class="summary table table-bordered table-striped properties" id="properties">
+		<tr data-order="handle" id="$handle">
+			<td class="attributes"><code>
+				protected  
+				<code><a href="class-Windows.Registry.RegistryHandle.html">Windows\Registry\RegistryHandle</a></code>
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Windows.Registry.Registry.html#54-57" title="Go to source code"><var>$handle</var></a>
+
+				<div class="description short">
+					<p>An open registry handle.</p>
+				</div>
+
+				<div class="description detailed hidden">
+					<p>An open registry handle.</p>
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$handle" class="anchor">#</a>
+					<code></code>
+				</div>
+			</td>
+		</tr>
+			</table>
+		</div>
+
+
+
+
+
+
+</div>
+	</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>
