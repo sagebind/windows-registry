@@ -307,29 +307,29 @@ final class RegistryKey
         // set differently depending on type
         switch ($type) {
             case self::TYPE_SZ:
-                $errorCode = $this->handle->setStringValue($this->hive, $keyPath, $name, (string)$value);
+                $errorCode = $this->handle->setStringValue($this->hive, $this->name, $name, (string)$value);
                 break;
 
             case self::TYPE_EXPAND_SZ:
-                $errorCode = $this->handle->setExpandedStringValue($this->hive, $keyPath, $name, (string)$value);
+                $errorCode = $this->handle->setExpandedStringValue($this->hive, $this->name, $name, (string)$value);
                 break;
 
             case self::TYPE_BINARY:
                 if (is_string($value)) {
                     $value = array_map('ord', str_split($value));
                 }
-                $errorCode = $this->handle->setBinaryValue($this->defKey, $keyPath, $name, $value);
+                $errorCode = $this->handle->setBinaryValue($this->defKey, $this->name, $name, $value);
                 break;
 
             case self::TYPE_DWORD:
-                $errorCode = $this->handle->setDWORDValue($this->hive, $keyPath, $name, (int)$value);
+                $errorCode = $this->handle->setDWORDValue($this->hive, $this->name, $name, (int)$value);
                 break;
 
             case self::TYPE_MULTI_SZ:
                 if (!is_array($value)) {
                     throw new Exception('Cannot set non-array type as MultiString.');
                 }
-                $errorCode = $this->handle->setMultiStringValue($this->defKey, $keyPath, $name, $value);
+                $errorCode = $this->handle->setMultiStringValue($this->defKey, $this->name, $name, $value);
                 break;
 
             default:
